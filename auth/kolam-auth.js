@@ -12,7 +12,7 @@
  *   </script>
  *
  * Data lives at users/{uid}/apps/{app} in Firestore: { profile: {...}, data: { key: value }, updatedAt }.
- * Inside the Android (Capacitor) apps, Google blocks web sign-in, so the native
+ * Sign-in uses a pop-up (redirect only if pop-ups are blocked). Inside the Android (Capacitor) apps, Google blocks web sign-in, so the native
  * @capacitor-firebase/authentication plugin is used when it is present.
  */
 import { FIREBASE_CONFIG } from './firebase-config.js'
@@ -66,7 +66,6 @@ const el = (html) => { const t = document.createElement('template'); t.innerHTML
 const esc = (v) => String(v ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]))
 const toast = (msg) => { const t = el(`<div class="ka-toast" role="status">${esc(msg)}</div>`); document.body.appendChild(t); setTimeout(() => t.remove(), 2600) }
 const native = () => !!(window.Capacitor?.isNativePlatform?.() && window.Capacitor?.Plugins?.FirebaseAuthentication)
-const phoneBrowser = () => matchMedia('(pointer: coarse)').matches && !native()
 const matches = (key) => (opts.sync || []).some((s) => key === s || (s.endsWith('.') || s.endsWith('-') || s.endsWith(':') || s.endsWith('_') ? key.startsWith(s) : false))
 const docRef = () => fb.fs.doc(db, 'users', user.uid, 'apps', opts.app)
 
@@ -107,9 +106,8 @@ async function signIn() {
       const res = await window.Capacitor.Plugins.FirebaseAuthentication.signInWithGoogle()
       const cred = fb.a.GoogleAuthProvider.credential(res.credential?.idToken, res.credential?.accessToken)
       await fb.a.signInWithCredential(auth, cred)
-    } else if (phoneBrowser()) {
-      await fb.a.signInWithRedirect(auth, provider)
     } else {
+      // Pop-up on phones too: redirect sign-in breaks when the app's domain differs from authDomain (storage partitioning).
       try { await fb.a.signInWithPopup(auth, provider) }
       catch (err) { if (err.code === 'auth/popup-blocked') await fb.a.signInWithRedirect(auth, provider); else throw err }
     }
