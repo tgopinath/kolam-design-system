@@ -82,10 +82,10 @@ enum Kolam {
     /// Backdrop behind dialogs and sheets.
     static let scrim = dyn(light: 0x1F2433, alpha: 0.60, dark: 0x000000, alpha: 0.70, contrast: 0x000000, alpha: 0.70)
 
-    // MARK: Spacing (4pt grid)
+    // MARK: Spacing (8-point grid; s1 = 4pt half-step for inside components only)
     enum Space {
-        static let s1: CGFloat = 4, s2: CGFloat = 8, s3: CGFloat = 12, s4: CGFloat = 16, s5: CGFloat = 20
-        static let s6: CGFloat = 24, s8: CGFloat = 32, s10: CGFloat = 40, s12: CGFloat = 48, s16: CGFloat = 64
+        static let s1: CGFloat = 4, s2: CGFloat = 8, s4: CGFloat = 16, s6: CGFloat = 24, s8: CGFloat = 32
+        static let s10: CGFloat = 40, s12: CGFloat = 48, s16: CGFloat = 64, s20: CGFloat = 80, s24: CGFloat = 96
     }
     // MARK: Radius
     enum Radius {
@@ -93,8 +93,8 @@ enum Kolam {
     }
     // MARK: Size
     enum Size {
-        static let controlSm: CGFloat = 32, controlMd: CGFloat = 44, controlLg: CGFloat = 52, targetMin: CGFloat = 44
-        static let iconSm: CGFloat = 16, iconMd: CGFloat = 20, iconLg: CGFloat = 24
+        static let controlSm: CGFloat = 32, controlMd: CGFloat = 48, controlLg: CGFloat = 56, targetMin: CGFloat = 48
+        static let iconSm: CGFloat = 16, iconMd: CGFloat = 24, iconLg: CGFloat = 32
     }
     // MARK: Type — scales with Dynamic Type. Bundle Lato (Lato-Regular.ttf, Lato-Bold.ttf, Lato-Black.ttf; list them under UIAppFonts), or these fall back to SF.
     enum Font {
@@ -126,7 +126,7 @@ enum Kolam {
 struct KolamPrimaryButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .font(Kolam.Font.label).frame(minHeight: Kolam.Size.controlMd).padding(.horizontal, Kolam.Space.s5)
+            .font(Kolam.Font.label).frame(minHeight: Kolam.Size.controlMd).padding(.horizontal, Kolam.Space.s6)
             .foregroundStyle(Kolam.onPrimary)
             .background(configuration.isPressed ? Kolam.primaryHover : Kolam.primary, in: RoundedRectangle(cornerRadius: Kolam.Radius.md))
     }
@@ -135,7 +135,7 @@ struct KolamPrimaryButtonStyle: ButtonStyle {
 struct KolamSecondaryButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .font(Kolam.Font.label).frame(minHeight: Kolam.Size.controlMd).padding(.horizontal, Kolam.Space.s5)
+            .font(Kolam.Font.label).frame(minHeight: Kolam.Size.controlMd).padding(.horizontal, Kolam.Space.s6)
             .foregroundStyle(configuration.isPressed ? Kolam.onSecondary : Kolam.secondaryText)
             .background(configuration.isPressed ? Kolam.secondaryStrong : Kolam.secondarySoft, in: RoundedRectangle(cornerRadius: Kolam.Radius.md))
     }
@@ -144,7 +144,7 @@ struct KolamSecondaryButtonStyle: ButtonStyle {
 struct KolamOutlineButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .font(Kolam.Font.label).frame(minHeight: Kolam.Size.controlMd).padding(.horizontal, Kolam.Space.s5)
+            .font(Kolam.Font.label).frame(minHeight: Kolam.Size.controlMd).padding(.horizontal, Kolam.Space.s6)
             .foregroundStyle(Kolam.ink)
             .background(configuration.isPressed ? Kolam.surfaceSunken : Kolam.surface, in: RoundedRectangle(cornerRadius: Kolam.Radius.md))
             .overlay(RoundedRectangle(cornerRadius: Kolam.Radius.md).strokeBorder(Kolam.lineStrong, lineWidth: 1.5))
@@ -154,7 +154,7 @@ struct KolamOutlineButtonStyle: ButtonStyle {
 struct KolamAccentButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .font(Kolam.Font.label).frame(minHeight: Kolam.Size.controlMd).padding(.horizontal, Kolam.Space.s5)
+            .font(Kolam.Font.label).frame(minHeight: Kolam.Size.controlMd).padding(.horizontal, Kolam.Space.s6)
             .foregroundStyle(Kolam.onAccent)
             .background(configuration.isPressed ? Kolam.accentHover : Kolam.accent, in: RoundedRectangle(cornerRadius: Kolam.Radius.md))
     }

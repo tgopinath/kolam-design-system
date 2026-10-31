@@ -88,9 +88,9 @@ th { font-weight: 700; color: var(--ink-2); background: var(--surface-sunken); }
 .comp-preview .k-bottomnav { max-width: 420px; margin: 20px; border: 1px solid var(--line); border-radius: var(--radius-lg); }
 .comp-doc { padding: 4px 20px 16px; font-size: 15px; line-height: 23px; }
 .comp-doc li { margin-bottom: 4px; }
-.pv { padding: 20px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
-.pv-col { padding: 20px; display: grid; gap: 16px; max-width: 420px; }
-.pv-grid { padding: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.pv { padding: 24px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+.pv-col { padding: 24px; display: grid; gap: 16px; max-width: 420px; }
+.pv-grid { padding: 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
 pre { background: var(--sidebar); color: var(--on-sidebar); padding: 16px; border-radius: var(--radius-lg); overflow-x: auto; font: 400 13px/20px var(--font-mono); }
 pre code { background: none; padding: 0; color: inherit; }
 .files { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
@@ -111,7 +111,7 @@ footer { max-width: 1180px; margin: 0 auto; padding: 32px 16px 48px; color: var(
 <header class="top"><div class="top-in">
   <a class="brand" href="#top"><span class="brand-dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>Kolam</a>
   <nav aria-label="Sections"><ul class="topnav">
-    <li><a href="#colors">Color</a></li><li><a href="#type">Type</a></li><li><a href="#space">Space</a></li><li><a href="#components">Components</a></li><li><a href="#a11y">Accessibility</a></li><li><a href="#use">Use it</a></li>
+    <li><a href="#colors">Color</a></li><li><a href="#type">Type</a></li><li><a href="#space">Space</a></li><li><a href="#components">Components</a></li><li><a href="#behavior">Psychology</a></li><li><a href="#a11y">Accessibility</a></li><li><a href="#use">Use it</a></li>
   </ul></nav>
   <div class="k-tabs" role="tablist" aria-label="Theme">
     <button class="k-tab" role="tab" data-theme-set="light" aria-selected="true">Light</button>
@@ -151,7 +151,8 @@ footer { max-width: 1180px; margin: 0 auto; padding: 32px 16px 48px; color: var(
 <section id="principles"><h2>Principles</h2><div class="prose"><ul>
 <li><strong>Accessible by default, not by audit.</strong> If you use the tokens as their usage notes say, the result passes AA. Don't put a colour on a ground its note doesn't name.</li>
 <li><strong>One loud thing per screen.</strong> Ocean Azure (<code>primary</code>) marks the main action and the current location. Magenta Rose (<code>accent</code>) marks one highlight or notification. Deep Teal (<code>secondary</code>) supports both. Everything else is Ink Slate neutrals.</li>
-<li><strong>Phone first, thumb first.</strong> Controls are 44px tall (<code>size-control-md</code>), and every tap target is at least <code>size-target-min</code>.</li>
+<li><strong>Phone first, thumb first.</strong> Controls are 48px tall (<code>size-control-md</code>), and every tap target is at least <code>size-target-min</code>.</li>
+<li><strong>Designed for how people think.</strong> Kolam applies the growth.design psychology principles as rules — see the Behavioral design section — with one hard limit: persuasion uses only true information, never dark patterns.</li>
 <li><strong>Bilingual-ready.</strong> Every font stack falls back to Noto Sans Tamil. Text containers grow; nothing is clipped.</li>
 </ul></div><h3>Content</h3><div class="prose"><ul>
 <li>Use sentence case everywhere: buttons, titles, tabs. Use uppercase only for <code>caption</code> overlines.</li>
@@ -197,7 +198,7 @@ footer { max-width: 1180px; margin: 0 auto; padding: 32px 16px 48px; color: var(
 
 <section id="type"><h2>Typography</h2>
   <ul class="prose"><li><code>--font-display</code> Lato</li><li><code>--font-sans</code> Lato</li><li><code>--font-mono</code> JetBrains Mono</li></ul>
-  <div class="ty-row"><div class="ty-meta"><code>.display-xl</code><small>48px / 52px · 900</small></div><div class="display-xl ty-sample">Wake me at Tambaram</div></div><div class="ty-row"><div class="ty-meta"><code>.display-lg</code><small>36px / 40px · 900</small></div><div class="display-lg ty-sample">Today&#x27;s harvest</div></div><div class="ty-row"><div class="ty-meta"><code>.heading-1</code><small>28px / 34px · 700</small></div><div class="heading-1 ty-sample">Push day · Week 3</div></div><div class="ty-row"><div class="ty-meta"><code>.heading-2</code><small>22px / 28px · 700</small></div><div class="heading-2 ty-sample">Upcoming alarms</div></div><div class="ty-row"><div class="ty-meta"><code>.heading-3</code><small>18px / 24px · 700</small></div><div class="heading-3 ty-sample">Paddy · Kuruvai season</div></div><div class="ty-row"><div class="ty-meta"><code>.body-lg</code><small>18px / 28px · 400</small></div><div class="body-lg ty-sample">Set a destination and sleep — we&#x27;ll wake you 2 km before.</div></div><div class="ty-row"><div class="ty-meta"><code>.body</code><small>16px / 24px · 400</small></div><div class="body ty-sample">Water the seedlings early, before 9 am.</div></div><div class="ty-row"><div class="ty-meta"><code>.body-sm</code><small>14px / 20px · 400</small></div><div class="body-sm ty-sample">Last synced 4 minutes ago</div></div><div class="ty-row"><div class="ty-meta"><code>.label</code><small>14px / 20px · 700</small></div><div class="label ty-sample">Destination</div></div><div class="ty-row"><div class="ty-meta"><code>.caption</code><small>12px / 16px · 700</small></div><div class="caption ty-sample">UPDATED · 31 OCT</div></div><div class="ty-row"><div class="ty-meta"><code>.mono</code><small>14px / 20px · 400</small></div><div class="mono ty-sample">12.9716° N, 80.2210° E</div></div>
+  <div class="ty-row"><div class="ty-meta"><code>.display-xl</code><small>48px / 56px · 900</small></div><div class="display-xl ty-sample">Wake me at Tambaram</div></div><div class="ty-row"><div class="ty-meta"><code>.display-lg</code><small>36px / 40px · 900</small></div><div class="display-lg ty-sample">Today&#x27;s harvest</div></div><div class="ty-row"><div class="ty-meta"><code>.heading-1</code><small>28px / 36px · 700</small></div><div class="heading-1 ty-sample">Push day · Week 3</div></div><div class="ty-row"><div class="ty-meta"><code>.heading-2</code><small>22px / 28px · 700</small></div><div class="heading-2 ty-sample">Upcoming alarms</div></div><div class="ty-row"><div class="ty-meta"><code>.heading-3</code><small>18px / 24px · 700</small></div><div class="heading-3 ty-sample">Paddy · Kuruvai season</div></div><div class="ty-row"><div class="ty-meta"><code>.body-lg</code><small>18px / 28px · 400</small></div><div class="body-lg ty-sample">Set a destination and sleep — we&#x27;ll wake you 2 km before.</div></div><div class="ty-row"><div class="ty-meta"><code>.body</code><small>16px / 24px · 400</small></div><div class="body ty-sample">Water the seedlings early, before 9 am.</div></div><div class="ty-row"><div class="ty-meta"><code>.body-sm</code><small>14px / 20px · 400</small></div><div class="body-sm ty-sample">Last synced 4 minutes ago</div></div><div class="ty-row"><div class="ty-meta"><code>.label</code><small>14px / 20px · 700</small></div><div class="label ty-sample">Destination</div></div><div class="ty-row"><div class="ty-meta"><code>.caption</code><small>12px / 16px · 700</small></div><div class="caption ty-sample">UPDATED · 31 OCT</div></div><div class="ty-row"><div class="ty-meta"><code>.mono</code><small>14px / 20px · 400</small></div><div class="mono ty-sample">12.9716° N, 80.2210° E</div></div>
   <div class="prose"><ul>
 <li><strong>Lato</strong> is Kolam's one typeface. It's free under the SIL Open Font License. <code>display</code> and <code>sans</code> both point to it.</li>
 <li>Use three weights only: Regular (400) for reading, Bold (700) for headings, labels, buttons, badges and captions, and Black (900) for <code>display-xl</code>, <code>display-lg</code> and big stat numbers. Lato has no 500, 600 or 800, so don't ask for them.</li>
@@ -212,13 +213,19 @@ footer { max-width: 1180px; margin: 0 auto; padding: 32px 16px 48px; color: var(
 </section>
 
 <section id="space"><h2>Spacing, size and shape</h2>
-  <h3>Spacing</h3><div class="sp-row"><code>space-1</code><span class="sp-bar" style="width:var(--space-1)"></span><small>4px</small></div><div class="sp-row"><code>space-2</code><span class="sp-bar" style="width:var(--space-2)"></span><small>8px</small></div><div class="sp-row"><code>space-3</code><span class="sp-bar" style="width:var(--space-3)"></span><small>12px</small></div><div class="sp-row"><code>space-4</code><span class="sp-bar" style="width:var(--space-4)"></span><small>16px</small></div><div class="sp-row"><code>space-5</code><span class="sp-bar" style="width:var(--space-5)"></span><small>20px</small></div><div class="sp-row"><code>space-6</code><span class="sp-bar" style="width:var(--space-6)"></span><small>24px</small></div><div class="sp-row"><code>space-8</code><span class="sp-bar" style="width:var(--space-8)"></span><small>32px</small></div><div class="sp-row"><code>space-10</code><span class="sp-bar" style="width:var(--space-10)"></span><small>40px</small></div><div class="sp-row"><code>space-12</code><span class="sp-bar" style="width:var(--space-12)"></span><small>48px</small></div><div class="sp-row"><code>space-16</code><span class="sp-bar" style="width:var(--space-16)"></span><small>64px</small></div>
+  <h3>Spacing</h3><div class="sp-row"><code>space-1</code><span class="sp-bar" style="width:var(--space-1)"></span><small>4px</small></div><div class="sp-row"><code>space-2</code><span class="sp-bar" style="width:var(--space-2)"></span><small>8px</small></div><div class="sp-row"><code>space-4</code><span class="sp-bar" style="width:var(--space-4)"></span><small>16px</small></div><div class="sp-row"><code>space-6</code><span class="sp-bar" style="width:var(--space-6)"></span><small>24px</small></div><div class="sp-row"><code>space-8</code><span class="sp-bar" style="width:var(--space-8)"></span><small>32px</small></div><div class="sp-row"><code>space-10</code><span class="sp-bar" style="width:var(--space-10)"></span><small>40px</small></div><div class="sp-row"><code>space-12</code><span class="sp-bar" style="width:var(--space-12)"></span><small>48px</small></div><div class="sp-row"><code>space-16</code><span class="sp-bar" style="width:var(--space-16)"></span><small>64px</small></div><div class="sp-row"><code>space-20</code><span class="sp-bar" style="width:var(--space-20)"></span><small>80px</small></div><div class="sp-row"><code>space-24</code><span class="sp-bar" style="width:var(--space-24)"></span><small>96px</small></div>
   <h3>Radius</h3><div class="rads"><div class="rad"><div class="rad-box" style="border-radius:var(--radius-xs)"></div><code>radius-xs</code><small>4px</small></div><div class="rad"><div class="rad-box" style="border-radius:var(--radius-sm)"></div><code>radius-sm</code><small>8px</small></div><div class="rad"><div class="rad-box" style="border-radius:var(--radius-md)"></div><code>radius-md</code><small>12px</small></div><div class="rad"><div class="rad-box" style="border-radius:var(--radius-lg)"></div><code>radius-lg</code><small>16px</small></div><div class="rad"><div class="rad-box" style="border-radius:var(--radius-xl)"></div><code>radius-xl</code><small>24px</small></div><div class="rad"><div class="rad-box" style="border-radius:var(--radius-pill)"></div><code>radius-pill</code><small>999px</small></div></div>
-  <div class="prose"><ul>
-<li>Spacing is on a 4px grid: <code>space-1</code> (4) to <code>space-16</code> (64). Use <code>space-4</code> for phone gutters and card padding, <code>space-6</code> between cards, and <code>space-8</code> between sections.</li>
-<li>Lay out groups with <code>gap</code>, not margins.</li>
-<li>Radii: <code>radius-sm</code> for badges and checkboxes, <code>radius-md</code> for buttons and inputs, <code>radius-lg</code> for cards, <code>radius-xl</code> for dialogs and sheets, <code>radius-pill</code> for switches, segmented tabs and avatars.</li>
-<li>Control heights: <code>size-control-md</code> (44px) is the default, <code>size-control-lg</code> (52px) is the phone CTA, and <code>size-control-sm</code> (32px) is for desktop toolbars only.</li>
+  <div class="prose"><p>Kolam is built on an <strong>8-point grid</strong>. One unit is 8px, and every space, size and layout dimension is a whole number of units.</p>
+<ul>
+<li><strong>Spacing tokens:</strong> <code>space-2</code> (8), <code>space-4</code> (16), <code>space-6</code> (24), <code>space-8</code> (32), <code>space-10</code> (40), <code>space-12</code> (48), <code>space-16</code> (64), <code>space-20</code> (80), <code>space-24</code> (96). The token number is the pixel value divided by 4, so <code>space-4</code> = 16px = 2 units.</li>
+<li><strong>The half-step:</strong> <code>space-1</code> (4px) is allowed only for tight gaps *inside* a component: icon-to-label, badge padding, the inset of a segmented control. Never use it between components.</li>
+<li><strong>Off-grid values are gone.</strong> There's no 12px or 20px spacing. Where you'd reach for 12, use 8 for things that belong together and 16 for things that are separate.</li>
+<li><strong>Defaults:</strong> <code>space-4</code> for phone gutters, card padding and gaps between related controls; <code>space-6</code> between cards and form groups; <code>space-8</code> between sections in a screen.</li>
+<li><strong>Sizes:</strong> controls are <code>size-control-sm</code> (32px, desktop toolbars only), <code>size-control-md</code> (48px, the default) and <code>size-control-lg</code> (56px, phone CTA). Tap targets are at least <code>size-target-min</code> (48px). List rows are 56px; the bottom nav is 64px. Icons are 16, 24 or 32px.</li>
+<li><strong>Type:</strong> line heights sit on a 4px baseline (16, 20, 24, 28, 36, 40, 56), so two lines of text always land back on the 8px grid.</li>
+<li><strong>Derived values are fine.</strong> Centering something (<code>(48px − 24px) / 2</code>) or a 1px border doesn't need its own token.</li>
+<li><strong>Radii</strong> are multiples of 4 (<code>radius-xs</code> 4, <code>radius-sm</code> 8, <code>radius-md</code> 12, <code>radius-lg</code> 16, <code>radius-xl</code> 24, <code>radius-pill</code>). Corners are shape, not spacing, so 12 is allowed here.</li>
+<li>Lay out groups with <code>gap</code>, not margins, so the grid holds when things wrap.</li>
 </ul></div>
   <h3>Elevation and motion</h3><div class="prose"><ul>
 <li>Separate surfaces with <code>line</code> first. Shadows are for floating things only: <code>shadow-1</code> for resting cards, <code>shadow-2</code> for menus and toasts, <code>shadow-3</code> for dialogs. The <code>contrast</code> theme swaps shadows for solid outlines.</li>
@@ -226,7 +233,7 @@ footer { max-width: 1180px; margin: 0 auto; padding: 32px 16px 48px; color: var(
 <li>Every transition sits inside <code>@media (prefers-reduced-motion: no-preference)</code>. Nothing flashes more than 3 times a second, and nothing auto-plays for more than 5 seconds without a pause control.</li>
 </ul></div>
   <h3>Iconography</h3><div class="prose"><ul>
-<li>Use <strong>Lucide</strong> icons (ISC licence): a 24px grid, 2px stroke, round caps and joins, <code>currentColor</code>. Use <code>size-icon-md</code> (20px) in controls and <code>size-icon-lg</code> (24px) in navigation.</li>
+<li>Use <strong>Lucide</strong> icons (ISC licence): a 24px grid, 2px stroke, round caps and joins, <code>currentColor</code>. Use <code>size-icon-md</code> (24px) in controls and navigation, <code>size-icon-sm</code> (16px) in badges and dense rows, and <code>size-icon-lg</code> (32px) for standalone icons.</li>
 <li>Kolam has no brand icon set of its own. The component previews draw a few Lucide-style glyphs inline.</li>
 <li>Decorative icons get <code>aria-hidden="true"</code>. An icon-only control gets an <code>aria-label</code>. Icons that carry meaning must pass 3:1 against their ground.</li>
 </ul></div>
@@ -237,30 +244,35 @@ footer { max-width: 1180px; margin: 0 auto; padding: 32px 16px 48px; color: var(
   <div class="comp-layout"><ul class="comp-nav"><li><a href="#c-button">Button</a></li><li><a href="#c-iconbutton">IconButton</a></li><li><a href="#c-textfield">TextField</a></li><li><a href="#c-select">Select</a></li><li><a href="#c-checkbox">Checkbox</a></li><li><a href="#c-radio">Radio</a></li><li><a href="#c-switch">Switch</a></li><li><a href="#c-badge">Badge</a></li><li><a href="#c-alert">Alert</a></li><li><a href="#c-card">Card</a></li><li><a href="#c-list">List</a></li><li><a href="#c-tabs">Tabs</a></li><li><a href="#c-bottomnav">BottomNav</a></li><li><a href="#c-progress">Progress</a></li><li><a href="#c-toast">Toast</a></li><li><a href="#c-dialog">Dialog</a></li><li><a href="#c-avatar">Avatar</a></li></ul><div><article class="comp" id="c-button"><h3>Button</h3><div class="comp-preview"><div class="pv">
   <button class="k-btn k-btn-primary" type="button">Set alarm</button>
   <button class="k-btn k-btn-secondary" type="button"><svg class="k-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Add stop</button>
+  <button class="k-btn k-btn-accent" type="button">Join the challenge</button>
+  <button class="k-btn k-btn-outline" type="button">Details</button>
   <button class="k-btn k-btn-ghost" type="button">Skip for now</button>
   <button class="k-btn k-btn-danger" type="button">Delete plot</button>
   <button class="k-btn k-btn-primary" type="button" disabled>Saving…</button>
-  <button class="k-btn k-btn-secondary k-btn-sm" type="button">Small</button>
+  <button class="k-btn k-btn-secondary-solid k-btn-sm" type="button">Small solid teal</button>
 </div></div><div class="comp-doc"><p>Triggers an action in place; use a link (<code>&lt;a&gt;</code>) when it navigates.</p>
-<p><strong>Markup:</strong> <code>&lt;button type="button" class="k-btn k-btn-primary"&gt;Set alarm&lt;/button&gt;</code>. Variants: <code>k-btn-primary</code>, <code>k-btn-secondary</code>, <code>k-btn-ghost</code>, <code>k-btn-danger</code>. Sizes: <code>k-btn-sm</code> (32px, desktop only), default (44px), <code>k-btn-lg</code> (52px phone CTA), plus <code>k-btn-block</code> for full width. An icon goes first, as <code>&lt;svg class="k-icon" aria-hidden="true"&gt;</code>.</p>
+<p><strong>Markup:</strong> <code>&lt;button type="button" class="k-btn k-btn-primary"&gt;Set alarm&lt;/button&gt;</code>. Variants: <code>k-btn-primary</code> (Ocean Azure), <code>k-btn-secondary</code> (tonal Deep Teal), <code>k-btn-secondary-solid</code> (solid teal), <code>k-btn-accent</code> (Magenta Rose), <code>k-btn-outline</code> (neutral), <code>k-btn-ghost</code>, <code>k-btn-danger</code>. Sizes: <code>k-btn-sm</code> (32px, desktop only), default (48px), <code>k-btn-lg</code> (56px phone CTA), plus <code>k-btn-block</code> for full width. An icon goes first, as <code>&lt;svg class="k-icon" aria-hidden="true"&gt;</code>.</p>
 <ul>
-<li><strong>One primary per screen.</strong> It is the action the screen exists for. Everything else is secondary or ghost.</li>
+<li><strong>One primary per screen.</strong> It is the action the screen exists for. Everything else is secondary, outline or ghost.</li>
 <li>Labels start with a verb and use sentence case: "Set alarm", "Save plot". Avoid "OK" and "Submit".</li>
 <li>Disabled: use <code>disabled</code> on a <code>&lt;button&gt;</code>, or <code>aria-disabled="true"</code> on a link. If the reason isn't obvious, tell people why nearby instead of leaving a dead button.</li>
 <li>Loading: keep the width, swap the label ("Saving…") and add <code>aria-busy="true"</code>.</li>
 <li><code>k-btn-danger</code> is only for the confirming step of a destructive action, usually inside a Dialog.</li>
-<li>Never put an accent (marigold) fill on a button: it fails 3:1 against white surfaces.</li>
+<li><code>k-btn-accent</code> is a call-to-action highlight (join, upgrade, try something new). Use at most one per screen, and never next to a primary button.</li>
+<li>Solid teal uses <code>secondary-strong</code>, not the brand <span class="hex"><i style="background:#0E8C8C" aria-hidden="true"></i><code>#0E8C8C</code></span>: white text on the brand teal is only 4.08:1, which fails AA.</li>
+<li><strong>Psychology:</strong> one primary per screen keeps choice easy (Hick's Law) and makes it the one thing that stands out (Von Restorff). Put phone CTAs at the bottom, full width, at <code>k-btn-lg</code> (Fitts's Law). Labels say the outcome before the tap (feedforward).</li>
 </ul></div></article><article class="comp" id="c-iconbutton"><h3>IconButton</h3><div class="comp-preview"><div class="pv">
   <button class="k-iconbtn" type="button" aria-label="Search"><svg class="k-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></button>
   <button class="k-iconbtn" type="button" aria-label="Notifications"><svg class="k-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 1 1 12 0c0 7 3 8 3 8H3s3-1 3-8"/><path d="M10.3 21a2 2 0 0 0 3.4 0"/></svg></button>
   <button class="k-iconbtn k-iconbtn-filled" type="button" aria-label="Add workout"><svg class="k-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
   <button class="k-iconbtn" type="button" aria-label="Close"><svg class="k-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
-</div></div><div class="comp-doc"><p>A 44×44 round button holding a single icon, for toolbars, close actions and app-bar actions.</p>
+</div></div><div class="comp-doc"><p>A 48×48 round button holding a single icon, for toolbars, close actions and app-bar actions.</p>
 <p><strong>Markup:</strong> <code>&lt;button class="k-iconbtn" aria-label="Search"&gt;&lt;svg class="k-icon" aria-hidden="true"&gt;…&lt;/svg&gt;&lt;/button&gt;</code>. Add <code>k-iconbtn-filled</code> for the one emphasised action in a bar.</p>
 <ul>
 <li>An <code>aria-label</code> is <strong>required</strong>. The icon is hidden from assistive tech, so the label is the only name.</li>
 <li>Use it only when the icon is unmistakable (search, close, add, more). Otherwise use a Button with text.</li>
-<li>The hit area stays 44px even when the drawn icon is 20px. Don't shrink it.</li>
+<li>The hit area stays 48px even though the drawn icon is 24px. Don't shrink it.</li>
+<li><strong>Psychology:</strong> icons are recognized faster than words only when they're conventional (recognition over recall). If the meaning isn't obvious to a new user, it needs a text label.</li>
 </ul></div></article><article class="comp" id="c-textfield"><h3>TextField</h3><div class="comp-preview"><div class="pv-col">
   <div class="k-field">
     <label class="k-label" for="pv-dest">Destination<span class="k-req" aria-hidden="true">*</span></label>
@@ -281,6 +293,7 @@ footer { max-width: 1180px; margin: 0 auto; padding: 32px 16px 48px; color: var(
 <li>Mark required fields with <code>required</code> and the visual asterisk (<code>.k-req</code>, <code>aria-hidden</code>). Mark optional fields with "(optional)" in the label instead.</li>
 <li>Set <code>inputmode</code> and <code>autocomplete</code> (<code>email</code>, <code>tel</code>, <code>postal-code</code>) so phones show the right keyboard.</li>
 <li>The font is 16px so iOS Safari doesn't zoom in when the field gets focus.</li>
+<li><strong>Psychology:</strong> pre-fill what you genuinely know and keep it visible and editable (default bias, cognitive load). Validate when the field is left, not on every keystroke, and say how to fix it (negativity bias, feedback loop). Group long forms into cards of 3–5 fields (chunking).</li>
 </ul></div></article><article class="comp" id="c-select"><h3>Select</h3><div class="comp-preview"><div class="pv-col">
   <div class="k-field">
     <label class="k-label" for="crop">Crop</label>
@@ -292,6 +305,7 @@ footer { max-width: 1180px; margin: 0 auto; padding: 32px 16px 48px; color: var(
 <li>Keep the native <code>&lt;select&gt;</code>. It gives you the platform picker on phones and keyboard support for free.</li>
 <li>With four or fewer options, use Radio or Tabs so every choice is visible.</li>
 <li>The first option is a real, sensible default. Don't use a "Select…" placeholder unless an empty value is meaningful.</li>
+<li><strong>Psychology:</strong> long lists slow decisions (Hick's Law). Put the most common options first and preselect the best default for the person, never the one that benefits the app.</li>
 </ul></div></article><article class="comp" id="c-checkbox"><h3>Checkbox</h3><div class="comp-preview"><div class="pv-col"><fieldset class="k-fieldset"><legend>Remind me</legend>
   <label class="k-check"><input type="checkbox" checked><span class="k-check-box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span class="k-check-text">Vibrate<small>Even when the phone is on silent</small></span></label>
   <label class="k-check"><input type="checkbox"><span class="k-check-box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span class="k-check-text">Play a sound</span></label>
@@ -299,9 +313,10 @@ footer { max-width: 1180px; margin: 0 auto; padding: 32px 16px 48px; color: var(
 </fieldset></div></div><div class="comp-doc"><p>Lets people turn independent options on or off. Changes take effect when the form is submitted.</p>
 <p><strong>Markup:</strong> <code>label.k-check</code> &gt; <code>input[type=checkbox]</code> + <code>span.k-check-box</code> (containing the check SVG) + <code>span.k-check-text</code> (with optional <code>&lt;small&gt;</code>). Wrap a group in <code>fieldset.k-fieldset</code> with a <code>&lt;legend&gt;</code>.</p>
 <ul>
-<li>The whole row is the label, so the tap target is at least 44px tall.</li>
+<li>The whole row is the label, so the tap target is at least 48px tall.</li>
 <li>The native input is visually hidden but still focusable. Focus draws the ring on the box.</li>
 <li>If a change should apply immediately (a setting), use Switch instead.</li>
+<li><strong>Psychology:</strong> never pre-tick consent, marketing or sharing options (default bias, ethics rule). Group related options under one legend (proximity, chunking).</li>
 </ul></div></article><article class="comp" id="c-radio"><h3>Radio</h3><div class="comp-preview"><div class="pv-col"><fieldset class="k-fieldset"><legend>Wake me</legend>
   <label class="k-check"><input type="radio" name="when" checked><span class="k-check-box"></span><span class="k-check-text">2 km before</span></label>
   <label class="k-check"><input type="radio" name="when"><span class="k-check-box"></span><span class="k-check-text">5 minutes before</span></label>
@@ -312,6 +327,7 @@ footer { max-width: 1180px; margin: 0 auto; padding: 32px 16px 48px; color: var(
 <li>Always preselect one option.</li>
 <li>Arrow keys move between options. That comes free with native radios sharing a <code>name</code>.</li>
 <li>For a compact switch between views, use Tabs instead.</li>
+<li><strong>Psychology:</strong> the preselected option is the one most people keep (default bias), so make it the best one for them. If you recommend an option, mark it with a <code>k-badge-primary</code> "Recommended" — don't add a decoy.</li>
 </ul></div></article><article class="comp" id="c-switch"><h3>Switch</h3><div class="comp-preview"><div class="pv-col">
   <label class="k-switch"><span>Dark mode follows system</span><input type="checkbox" role="switch" checked><span class="k-switch-track"></span></label>
   <label class="k-switch"><span>Tamil labels (தமிழ்)</span><input type="checkbox" role="switch"><span class="k-switch-track"></span></label>
@@ -321,20 +337,24 @@ footer { max-width: 1180px; margin: 0 auto; padding: 32px 16px 48px; color: var(
 <li>Use it for settings that apply at once, with no Save button.</li>
 <li>The label names the setting, not the state ("Vibrate", not "Vibrate on").</li>
 <li>The on state differs by thumb position <strong>and</strong> fill, not colour alone.</li>
+<li><strong>Psychology:</strong> the change applies instantly and visibly, so the switch itself is the feedback (feedback loop). If turning something off loses data, use a dialog instead (loss aversion).</li>
 </ul></div></article><article class="comp" id="c-badge"><h3>Badge</h3><div class="comp-preview"><div class="pv">
   <span class="k-badge">Draft</span>
   <span class="k-badge k-badge-primary">Week 3</span>
+  <span class="k-badge k-badge-secondary">Kharif</span>
   <span class="k-badge k-badge-accent"><svg class="k-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10Z"/><path d="M2 21c0-3 1.9-5.4 5.1-6"/></svg>Featured</span>
   <span class="k-badge k-badge-success"><svg class="k-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg>Harvested</span>
   <span class="k-badge k-badge-warning"><svg class="k-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></svg>Low water</span>
   <span class="k-badge k-badge-danger"><svg class="k-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>Overdue</span>
   <span class="k-badge k-badge-info k-badge-pill">New</span>
+  <span class="k-count" aria-label="3 unread notifications">3</span>
 </div></div><div class="comp-doc"><p>A short, non-interactive label for status or category.</p>
-<p><strong>Markup:</strong> <code>&lt;span class="k-badge k-badge-success"&gt;&lt;svg class="k-icon"&gt;…&lt;/svg&gt;Harvested&lt;/span&gt;</code>. Tones: neutral (default), <code>primary</code>, <code>accent</code>, <code>success</code>, <code>warning</code>, <code>danger</code>, <code>info</code>. Add <code>k-badge-pill</code> for counts and "New".</p>
+<p><strong>Markup:</strong> <code>&lt;span class="k-badge k-badge-success"&gt;&lt;svg class="k-icon"&gt;…&lt;/svg&gt;Harvested&lt;/span&gt;</code>. Tones: neutral (default), <code>primary</code>, <code>secondary</code> (tags), <code>accent</code>, <code>success</code>, <code>warning</code>, <code>danger</code>, <code>info</code>. Add <code>k-badge-pill</code> for "New". For notification counts, use <code>&lt;span class="k-count" aria-label="3 unread notifications"&gt;3&lt;/span&gt;</code>.</p>
 <ul>
 <li>One or two words. If it needs a sentence, use an Alert.</li>
 <li>Status badges carry an icon <strong>and</strong> a word. Never use a coloured dot alone.</li>
-<li><code>k-badge-accent</code> (marigold) is for celebration and featured content, not warnings.</li>
+<li><code>k-badge-accent</code> and <code>k-count</code> (Magenta Rose) are for notifications and highlights, never for errors. Errors use <code>danger</code>, with an icon.</li>
+<li><strong>Psychology:</strong> badges work because they're rare (Von Restorff). Show <code>k-count</code> only for genuinely new items and clear it once seen, or people learn to ignore it (banner blindness). Unfinished items can be badged gently to bring people back (Zeigarnik).</li>
 </ul></div></article><article class="comp" id="c-alert"><h3>Alert</h3><div class="comp-preview"><div class="pv-col" style="max-width:520px">
   <div class="k-alert" role="status"><svg class="k-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg><div><span class="k-alert-title">Offline mode</span><span class="k-alert-body">Changes are saved on this phone and sync when you're back online.</span></div></div>
   <div class="k-alert k-alert-success" role="status"><svg class="k-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg><div><span class="k-alert-title">Plot saved</span><span class="k-alert-body">Paddy · 2.5 acres was added to Kuruvai season.</span></div></div>
@@ -347,6 +367,7 @@ footer { max-width: 1180px; margin: 0 auto; padding: 32px 16px 48px; color: var(
 <li>The title says what happened; the body says what to do next.</li>
 <li>Body text is <code>ink</code> on the soft tint, so it reads at AA in every theme. The coloured icon identifies the tone, so tone never depends on colour alone.</li>
 <li>For a brief confirmation of something the person just did, use a Toast.</li>
+<li><strong>Psychology:</strong> alerts that never go away stop being read (banner blindness). Show one at a time, remove it once acted on, and frame it around what to do next, not what went wrong (framing, negativity bias).</li>
 </ul></div></article><article class="comp" id="c-card"><h3>Card</h3><div class="comp-preview"><div class="pv-grid">
   <article class="k-card">
     <span class="k-badge k-badge-primary" style="justify-self:start">Push day</span>
@@ -359,12 +380,13 @@ footer { max-width: 1180px; margin: 0 auto; padding: 32px 16px 48px; color: var(
     <p class="k-card-meta">Keep it going with a 20-minute session today.</p>
   </article>
 </div></div><div class="comp-doc"><p>A container that groups content and actions about one thing: a workout, a plot, an alarm, an animal.</p>
-<p><strong>Markup:</strong> <code>article.k-card</code> &gt; optional <code>.k-card-media</code>, then <code>h3.k-card-title</code>, <code>p.k-card-meta</code>, actions. Use <code>.k-card-featured</code> (marigold tint) for one highlighted card. Use <code>.k-stat</code> (<code>.k-stat-value</code> + <code>.k-stat-label</code>) for a big number.</p>
+<p><strong>Markup:</strong> <code>article.k-card</code> &gt; optional <code>.k-card-media</code>, then <code>h3.k-card-title</code>, <code>p.k-card-meta</code>, actions. Use <code>.k-card-featured</code> (Magenta Rose tint) for one highlighted card. Use <code>.k-stat</code> (<code>.k-stat-value</code> + <code>.k-stat-label</code>) for a big number.</p>
 <ul>
 <li>If the whole card is a link, make it an <code>&lt;a class="k-card"&gt;</code> with the title as its text, and put no other buttons inside.</li>
 <li>Use one featured card per screen at most.</li>
-<li>Don't nest cards. Inside a card, separate groups with spacing (<code>space-3</code>) or a <code>line</code> divider.</li>
+<li>Don't nest cards. Inside a card, separate groups with spacing (<code>space-4</code>) or a <code>line</code> divider.</li>
 <li>Lists of similar rows belong in a List, not a stack of cards.</li>
+<li><strong>Psychology:</strong> one card is one idea (chunking). Cards in a row read as a set, so keep their structure identical (law of similarity). <code>k-card-featured</code> is for one honest highlight, such as a real streak or achievement (variable reward, Von Restorff).</li>
 </ul></div></article><article class="comp" id="c-list"><h3>List</h3><div class="comp-preview"><div class="pv-col">
   <ul class="k-list">
     <li><a class="k-list-item" href="#"><svg class="k-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span class="k-list-text">Tambaram<small>Wake 2 km before · 06:40</small></span><svg class="k-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a></li>
@@ -377,6 +399,7 @@ footer { max-width: 1180px; margin: 0 auto; padding: 32px 16px 48px; color: var(
 <li>Rows are at least 56px tall and the whole row is the tap target.</li>
 <li>Show a chevron only when the row navigates.</li>
 <li>Keep the second line to one short fact. Truncate in your own code, not with clipping.</li>
+<li><strong>Psychology:</strong> people remember the first and last rows best (serial position effect), so sort by what matters most. Show recent items first so people pick rather than type (recognition over recall).</li>
 </ul></div></article><article class="comp" id="c-tabs"><h3>Tabs</h3><div class="comp-preview"><div class="pv">
   <div class="k-tabs" role="tablist" aria-label="Range">
     <button class="k-tab" role="tab" aria-selected="false" tabindex="-1">Day</button>
@@ -389,6 +412,7 @@ footer { max-width: 1180px; margin: 0 auto; padding: 32px 16px 48px; color: var(
 <li>Only the selected tab is in the tab order (<code>tabindex="0"</code>). Arrow keys move between tabs, as the preview script shows.</li>
 <li>The selected tab is lifted on <code>surface</code> with a <code>line-strong</code> outline, so selection doesn't depend on colour alone.</li>
 <li>Tabs switch views; they don't trigger actions. For app-level sections on a phone, use BottomNav.</li>
+<li><strong>Psychology:</strong> at most four tabs (Miller's Law). The first tab is the default most people stay on (default bias), so make it the most useful view.</li>
 </ul></div></article><article class="comp" id="c-bottomnav"><h3>BottomNav</h3><div class="comp-preview"><nav class="k-bottomnav" aria-label="Main">
   <a href="#" aria-current="page"><span class="k-pip"><svg class="k-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1Z"/></svg></span>Home</a>
   <a href="#"><span class="k-pip"><svg class="k-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 6.5v11M17.5 6.5v11M3 9v6M21 9v6M6.5 12h11"/></svg></span>Workouts</a>
@@ -401,6 +425,7 @@ footer { max-width: 1180px; margin: 0 auto; padding: 32px 16px 48px; color: var(
 <li>The current item gets a tinted pip <strong>and</strong> primary text, not colour alone.</li>
 <li>Fix it to the bottom with <code>position: fixed; bottom: 0</code>. It already pads for <code>env(safe-area-inset-bottom)</code>.</li>
 <li>On wide screens, switch to a side rail or top navigation.</li>
+<li><strong>Psychology:</strong> familiar placement at the bottom, within thumb reach (Jakob's law, Fitts's Law). Home goes first and Settings last (serial position effect), with at most five items (Miller's Law).</li>
 </ul></div></article><article class="comp" id="c-progress"><h3>Progress</h3><div class="comp-preview"><div class="pv-col">
   <div class="k-progress"><div class="k-progress-head"><span id="pg1">Distance to Tambaram</span><span>8.4 km left</span></div>
     <div class="k-progress-track" role="progressbar" aria-labelledby="pg1" aria-valuemin="0" aria-valuemax="100" aria-valuenow="62" aria-valuetext="62%, 8.4 km left"><div class="k-progress-fill" style="width:62%"></div></div></div>
@@ -411,6 +436,7 @@ footer { max-width: 1180px; margin: 0 auto; padding: 32px 16px 48px; color: var(
 <ul>
 <li>Always show the value as text too ("3 of 4", "8.4 km left"). The bar alone isn't enough.</li>
 <li>Use <code>aria-valuetext</code> when the number means something specific (distance, time).</li>
+<li><strong>Psychology:</strong> people speed up as a goal gets close (goal-gradient effect), so always show the remaining amount in words. Unfinished progress brings people back (Zeigarnik), but never fake a head start.</li>
 </ul></div></article><article class="comp" id="c-toast"><h3>Toast</h3><div class="comp-preview"><div class="pv">
   <div class="k-toast" role="status"><svg class="k-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span class="k-toast-text">Alarm set for Tambaram</span><button class="k-btn k-btn-ghost" type="button">Undo</button></div>
 </div></div><div class="comp-doc"><p>A brief, inverted confirmation of something the person just did.</p>
@@ -419,6 +445,7 @@ footer { max-width: 1180px; margin: 0 auto; padding: 32px 16px 48px; color: var(
 <li>Keep it under 6 words plus at most one action.</li>
 <li>If it has an action, keep it on screen for at least 6 seconds and pause the timer on hover or focus (WCAG 2.2.1). Never auto-dismiss errors: use an Alert for those.</li>
 <li>Toasts use the inverted pair (<code>bg</code> text on an <code>ink</code> fill), which keeps the same contrast ratio as the body text.</li>
+<li><strong>Psychology:</strong> a toast is the feedback loop's "done", and often the end of a flow, so make it positive and specific (peak-end rule). Offering "Undo" removes the fear of losing something (loss aversion) better than a confirmation dialog.</li>
 </ul></div></article><article class="comp" id="c-dialog"><h3>Dialog</h3><div class="comp-preview"><div class="pv" style="justify-content:center">
   <div class="k-dialog" role="dialog" aria-modal="true" aria-labelledby="dt" style="position:static">
     <h2 class="k-dialog-title" id="dt">Delete this plot?</h2>
@@ -432,6 +459,7 @@ footer { max-width: 1180px; margin: 0 auto; padding: 32px 16px 48px; color: var(
 <li>The confirming action goes last (on the right). Make it <code>k-btn-danger</code> when the action is destructive.</li>
 <li>Return focus to the control that opened the dialog when it closes.</li>
 <li>Use dialogs sparingly. Prefer undo (a Toast) over confirmation for reversible actions.</li>
+<li><strong>Psychology:</strong> dialogs interrupt, so use them only for permanent losses. Say exactly what will be lost (loss aversion, framing), keep the safe option easy to reach, and never confirm-shame ("No, I like wasting water"). Pressure backfires (reactance).</li>
 </ul></div></article><article class="comp" id="c-avatar"><h3>Avatar</h3><div class="comp-preview"><div class="pv">
   <span class="k-avatar" role="img" aria-label="Gopinath">G</span>
   <span class="k-avatar k-avatar-accent" role="img" aria-label="Meena">M</span>
@@ -440,8 +468,78 @@ footer { max-width: 1180px; margin: 0 auto; padding: 32px 16px 48px; color: var(
 <p><strong>Markup:</strong> <code>span.k-avatar[role=img][aria-label="Name"]</code> with one or two initials, or an <code>&lt;img alt="Name"&gt;</code> inside it. Sizes: default 40px, <code>k-avatar-lg</code> 56px. Use <code>k-avatar-accent</code> for the current user.</p>
 <ul>
 <li>If the name is printed right next to the avatar, use <code>aria-hidden="true"</code> instead so it isn't read twice.</li>
+<li><strong>Psychology:</strong> a face or initial makes shared content feel personal (singularity effect). Use real people only; never invent avatars for fake social proof.</li>
 </ul></div></article></div></div>
 </section>
+
+<section id="behavior"><h2>Behavioral design</h2><div class="prose"><p>Kolam applies the cognitive principles catalogued by <a href="https://growth.design/psychology">growth.design</a> as concrete rules on its tokens and components. They're grouped the same way growth.design groups them: the four problems people face when using a product — too much <strong>information</strong>, not enough <strong>meaning</strong>, not enough <strong>time</strong>, and limits of <strong>memory</strong>.</p>
+<h3>The ethics rule (read this first)</h3>
+<ul>
+<li><strong>Help people do what they came to do; never trick them into something else.</strong> Persuasion principles — scarcity, social proof, loss aversion, anchoring, the decoy effect, defaults — may only use <strong>true</strong> information, in the person's interest.</li>
+<li>No fake countdowns, invented "only 2 left", made-up user counts, pre-ticked opt-ins, confirm-shaming ("No thanks, I don't like saving water"), or hiding the cancel button. These are dark patterns and they also break WCAG 3.3 and the trust Kolam's apps depend on.</li>
+<li><strong>Reactance:</strong> pressure backfires. If a screen needs urgency to work, the screen is wrong.</li>
+</ul>
+<h3>Information — reduce what people must process</h3>
+<ul>
+<li><strong>Hick's Law &amp; decision fatigue:</strong> one <code>k-btn-primary</code> per screen; at most two other actions beside it. More than four choices go in a <code>k-select</code>, a List or a second screen.</li>
+<li><strong>Cognitive load &amp; Tesler's Law:</strong> remove steps, don't hide them. Fill what you already know (location, last-used crop, last trip), but never make a guess the person can't see and change.</li>
+<li><strong>Progressive disclosure:</strong> show the essential first; put advanced settings behind a ghost button ("More options") or a second screen. Never hide something required.</li>
+<li><strong>Fitts's Law:</strong> frequent and primary actions are big and near the thumb — <code>size-control-lg</code> (56px) CTAs at the bottom of phone screens, <code>k-btn-block</code> on narrow layouts, tap targets never under <code>size-target-min</code> (48px). Destructive actions are *not* placed where the thumb rests.</li>
+<li><strong>Visual hierarchy, contrast &amp; the Von Restorff effect:</strong> only one thing per screen gets the loud treatment — the azure primary or one magenta <code>accent</code> highlight. If two things shout, neither is heard.</li>
+<li><strong>Banner blindness:</strong> reserve <code>k-alert</code> for what matters on this screen right now. Never leave a permanent banner; dismiss or remove it once it's acted on. Badges and <code>k-count</code> appear only when there's something new.</li>
+<li><strong>Signifiers:</strong> interactive things look interactive — buttons have fills or borders (<code>line-strong</code>), links are underlined <code>primary-text</code>, list rows that navigate show a chevron. Nothing static looks tappable.</li>
+<li><strong>Law of proximity &amp; juxtaposition:</strong> related things sit close (<code>space-2</code>), separate groups sit apart (<code>space-6</code>). Spacing, not boxes, does the grouping — the 8-point grid makes the difference readable.</li>
+<li><strong>Feedback loop:</strong> every action answers within 100ms — a pressed state on tap, a <code>k-toast</code> when something saves, inline errors as soon as a field is left. Silence reads as failure.</li>
+<li><strong>Spark effect &amp; nudge:</strong> make the first step tiny ("Try it with a sample farm", "Add your first stop"). Suggest; don't force.</li>
+<li><strong>Framing &amp; anchoring:</strong> state numbers the way people decide — "Saves 1,200 L this week", not "−14%". Show the useful reference first (last week, the recommended amount) so the new number has context.</li>
+<li><strong>Centre-stage effect &amp; decoy effect:</strong> when offering options (plans, wake-up distances), put the recommended one in the middle and mark it with a <code>k-badge-primary</code> "Recommended" — never invent a worse option just to make it look good.</li>
+<li><strong>Aesthetic-usability effect:</strong> polish is a feature — consistent tokens, the grid and real content make the app feel more reliable. It's also why Kolam bans lorem ipsum in previews.</li>
+</ul>
+<h3>Meaning — help people understand quickly</h3>
+<ul>
+<li><strong>Mental model, familiarity &amp; Jakob's law:</strong> use platform conventions — bottom nav on phones, back at the top-left, swipe to delete on iOS, native <code>&lt;select&gt;</code> and <code>&lt;dialog&gt;</code>. Novelty goes into content, not controls.</li>
+<li><strong>Recognition over recall</strong> (also Memory): show options instead of asking people to type them — chips for recent places, crop pickers, last-used values.</li>
+<li><strong>Miller's Law &amp; chunking:</strong> at most 5 bottom-nav items, at most 4 tabs, and break long numbers and forms into groups of 3–5 (<code>+91 98765 43210</code>; one card per form section).</li>
+<li><strong>Law of similarity:</strong> same function, same look — every destructive action is <code>danger</code>, every tag is <code>k-badge-secondary</code>. Don't style two different things alike.</li>
+<li><strong>Goal-gradient effect:</strong> show progress toward a goal and make it feel close — <code>k-progress</code> with text ("3 of 4 sets"), and start bars partly filled when the person has genuinely already done something.</li>
+<li><strong>Aha! moment:</strong> get new users to the core value in the first session — the first alarm set, the first watering plan, the first animal found. Onboarding exists only to get there.</li>
+<li><strong>Social proof, authority &amp; noble edge:</strong> only real signals — "Recommended by TNAU" if it's true, "1,248 farmers used this guide" if you actually counted. Otherwise say nothing.</li>
+<li><strong>Feedforward:</strong> say what will happen before it happens — button labels name the outcome ("Delete plot"), the help text under a field says what you'll do with it, a dialog's title is the question.</li>
+<li><strong>Curse of knowledge:</strong> write for someone new — plain words, units spelled out once, Tamil and English labels checked by a native speaker.</li>
+<li><strong>Variable reward &amp; delighters:</strong> small, honest surprises — a streak card in <code>k-card-featured</code>, a fun fact after a quiz. Never gamble with real things (money, data).</li>
+<li><strong>Fresh-start effect:</strong> offer clean starts at natural boundaries — a new week, a new season, after a break ("New week — start fresh?").</li>
+</ul>
+<h3>Time — respect it</h3>
+<ul>
+<li><strong>Default bias:</strong> choose defaults that are best for the person (sensible wake distance, metric units, location only when needed) — and make every default visible and changeable. Opt-ins (notifications, marketing, sharing) default to <strong>off</strong>.</li>
+<li><strong>Loss aversion:</strong> prefer undo over confirmation — a <code>k-toast</code> with "Undo" for reversible deletes. Use a <code>k-dialog</code> only when the loss is permanent, and say exactly what will be lost ("14 log entries").</li>
+<li><strong>Labor illusion:</strong> when something takes more than a second, show what's happening ("Checking rain for your fields…") rather than a bare spinner. Don't fake delays.</li>
+<li><strong>Commitment &amp; consistency, investment loops &amp; IKEA effect:</strong> let people make the app theirs early (name the farm, choose a crop, set a home station) — small investments that make returning natural. Never trap their data inside.</li>
+<li><strong>Doherty threshold &amp; chronoception:</strong> keep interactions under 400ms; use <code>duration-fast</code> (120ms) and <code>duration-base</code> (200ms) so the UI feels instant. Skeletons beat spinners for content loads.</li>
+<li><strong>Hyperbolic discounting:</strong> lead with the benefit people get now ("Sleep — we'll wake you"), not the long-term one.</li>
+<li><strong>Pareto principle:</strong> design the 20% of flows people use 80% of the time first and best; everything else can be one tap deeper.</li>
+<li><strong>Provide exit points:</strong> every flow has an obvious way out (close, back, "Skip for now"); never trap people in onboarding or a dialog.</li>
+</ul>
+<h3>Memory — design for how people remember</h3>
+<ul>
+<li><strong>Peak-end rule:</strong> design the best moment and the last moment on purpose — the alarm that wakes you on time, the "Harvest logged" toast, a clear success screen at the end of a flow. Never end a flow on an error with no way forward.</li>
+<li><strong>Zeigarnik effect:</strong> show unfinished things gently — "2 fields not watered today", a half-filled progress bar — so people come back. Don't nag.</li>
+<li><strong>Serial position effect:</strong> put the most important items first and last — Home first and Settings last in the bottom nav, the key action at the end of a form.</li>
+<li><strong>Picture superiority &amp; storytelling:</strong> use real photos and icons alongside words (Zoorassic Park animals, crop photos); explain with a short example rather than a rule.</li>
+<li><strong>Spacing effect &amp; shaping:</strong> teach in small steps over time — one tip per session, not a ten-screen tour.</li>
+<li><strong>Negativity bias:</strong> errors are remembered longest, so make them rare and kind: prevent them with good defaults and inline validation, and when they happen, say how to fix it (<code>k-error</code>, <code>k-alert-danger</code>).</li>
+<li><strong>Endowment effect:</strong> show people what they've built — "Your 5 fields", "Your trips" — before asking them to do more.</li>
+</ul>
+<h3>Checklist for every new screen</h3>
+<ul>
+<li>One primary action, big and reachable (Hick, Fitts, Von Restorff).</li>
+<li>Grouped by spacing on the 8-point grid (proximity, chunking).</li>
+<li>Every action gives feedback within 100ms (feedback loop, Doherty).</li>
+<li>Defaults are honest, visible and changeable; opt-ins are off (default bias).</li>
+<li>Reversible actions have undo; permanent ones say what's lost (loss aversion).</li>
+<li>No invented urgency, scarcity or social proof (the ethics rule).</li>
+<li>The last moment of the flow is a clear, positive end (peak-end rule).</li>
+</ul></div></section>
 
 <section id="a11y"><h2>Accessibility checklist</h2><div class="prose"><ul>
 <li><strong>1.1.1</strong> Every meaningful image has <code>alt</code> text; decorative images use <code>alt=""</code>.</li>
@@ -451,7 +549,7 @@ footer { max-width: 1180px; margin: 0 auto; padding: 32px 16px 48px; color: var(
 <li><strong>1.4.4 / 1.4.10</strong> The layout works at 200% zoom and at 320px wide with no sideways scrolling.</li>
 <li><strong>2.1.1</strong> Everything works with a keyboard. Use native <code>&lt;button&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;input&gt;</code> and <code>&lt;dialog&gt;</code> before building your own.</li>
 <li><strong>2.4.3 / 2.4.7</strong> Focus order follows the visual order, and the focus ring is always visible.</li>
-<li><strong>2.5.8</strong> Targets are at least 24px. Kolam uses 44px.</li>
+<li><strong>2.5.8</strong> Targets are at least 24px. Kolam uses 48px.</li>
 <li><strong>3.3.1 / 3.3.2</strong> Fields have visible labels; errors are announced (<code>aria-invalid</code> + <code>aria-describedby</code>) and explain the fix.</li>
 <li><strong>4.1.2</strong> Custom widgets carry a role, a name and a state: <code>role="switch"</code>, <code>aria-selected</code>, <code>aria-current</code>, <code>aria-expanded</code>.</li>
 </ul></div></section>
