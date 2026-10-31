@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kolam Auth demo</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../kolam.css">
+<style>body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans)}main{max-width:720px;margin:0 auto;padding:72px 24px}</style>
+</head>
+<body>
+<main>
+  <h1>FarmerFriend (demo app)</h1>
+  <p>This page shows the shared sign-in and profile without Firebase. Sign in, then open the profile from the photo in the top-right corner.</p>
+</main>
+<script type="module">
+  import { KolamAuth } from './kolam-auth.js'
+  KolamAuth.init({
+    demo: true,
+    app: 'farmerfriend', appName: 'FarmerFriend', icon: '../../farmer-friend/icon-192.png',
+    tagline: 'Save your field, crops and village to your account, so they follow you between your phone and the web.',
+    fields: [
+      { key: 'village', label: 'Village or district', placeholder: 'e.g. Thanjavur' },
+      { key: 'fieldSize', label: 'Field size (acres)', type: 'number' },
+      { key: 'lang', label: 'Language', type: 'select', options: [['en', 'English'], ['ta', 'தமிழ்']] },
+    ],
+    sync: ['ff.'],
+  })
+</script>
+</body>
+</html>
