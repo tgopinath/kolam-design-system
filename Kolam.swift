@@ -96,16 +96,13 @@ enum Kolam {
         static let controlSm: CGFloat = 32, controlMd: CGFloat = 44, controlLg: CGFloat = 52, targetMin: CGFloat = 44
         static let iconSm: CGFloat = 16, iconMd: CGFloat = 20, iconLg: CGFloat = 24
     }
-    // MARK: Type — scales with Dynamic Type. Bundle Bricolage Grotesque and Lato (Lato-Regular.ttf, Lato-Bold.ttf; list them under UIAppFonts), or these fall back to SF.
+    // MARK: Type — scales with Dynamic Type. Bundle Lato (Lato-Regular.ttf, Lato-Bold.ttf, Lato-Black.ttf; list them under UIAppFonts), or these fall back to SF.
     enum Font {
-        static func display(_ size: CGFloat, relativeTo style: SwiftUI.Font.TextStyle) -> SwiftUI.Font {
-            .custom("Bricolage Grotesque", size: size, relativeTo: style).weight(.bold)
-        }
-        static let displayXL = display(48, relativeTo: .largeTitle)
-        static let displayLG = display(36, relativeTo: .largeTitle)
-        static let heading1 = display(28, relativeTo: .title)
-        static let heading2 = display(22, relativeTo: .title2)
-        static let heading3 = display(18, relativeTo: .title3)
+        static let displayXL = SwiftUI.Font.custom("Lato-Black", size: 48, relativeTo: .largeTitle)
+        static let displayLG = SwiftUI.Font.custom("Lato-Black", size: 36, relativeTo: .largeTitle)
+        static let heading1 = SwiftUI.Font.custom("Lato-Bold", size: 28, relativeTo: .title)
+        static let heading2 = SwiftUI.Font.custom("Lato-Bold", size: 22, relativeTo: .title2)
+        static let heading3 = SwiftUI.Font.custom("Lato-Bold", size: 18, relativeTo: .title3)
         static let bodyLG = SwiftUI.Font.custom("Lato-Regular", size: 18, relativeTo: .body)
         static let body = SwiftUI.Font.custom("Lato-Regular", size: 16, relativeTo: .body)
         static let bodySM = SwiftUI.Font.custom("Lato-Regular", size: 14, relativeTo: .subheadline)

@@ -1,5 +1,5 @@
 /* Kolam components. Load after tokens.css. */
-@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Lato:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+Tamil:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+Tamil:wght@400..700&display=swap");
 
 /* ---------- base ---------- */
 *, *::before, *::after { box-sizing: border-box; }
@@ -96,7 +96,7 @@ textarea.k-input { padding: var(--space-3); min-height: 96px; resize: vertical; 
 /* ---------- Alert ---------- */
 .k-alert { display: flex; gap: var(--space-3); padding: var(--space-4); border-radius: var(--radius-lg); background: var(--info-soft); color: var(--ink); border: var(--border-hairline) solid transparent; }
 .k-alert > .k-icon { color: var(--info); margin-top: 2px; }
-.k-alert-title { font-weight: 650; display: block; }
+.k-alert-title { font-weight: 700; display: block; }
 .k-alert-body { font-size: 14px; line-height: 20px; color: var(--ink); }
 .k-alert-success { background: var(--success-soft); } .k-alert-success > .k-icon { color: var(--success); }
 .k-alert-warning { background: var(--warning-soft); } .k-alert-warning > .k-icon { color: var(--warning); }
@@ -106,12 +106,12 @@ textarea.k-input { padding: var(--space-3); min-height: 96px; resize: vertical; 
 /* ---------- Card ---------- */
 .k-card { background: var(--surface); border: var(--border-hairline) solid var(--line); border-radius: var(--radius-lg); padding: var(--space-4); box-shadow: var(--shadow-1); display: grid; gap: var(--space-3); }
 .k-card-media { margin: calc(var(--space-4) * -1) calc(var(--space-4) * -1) 0; border-radius: var(--radius-lg) var(--radius-lg) 0 0; overflow: hidden; aspect-ratio: 16 / 9; background: var(--primary-soft); }
-.k-card-title { font: 650 18px/24px var(--font-display); margin: 0; }
+.k-card-title { font: 700 18px/24px var(--font-display); margin: 0; }
 .k-card-meta { font-size: 14px; line-height: 20px; color: var(--ink-2); margin: 0; }
 .k-card-featured { background: var(--accent-soft); border-color: transparent; }
 a.k-card { color: inherit; text-decoration: none; } a.k-card:hover { border-color: var(--line-strong); }
 .k-stat { display: grid; gap: 2px; }
-.k-stat-value { font: 700 36px/40px var(--font-display); letter-spacing: -0.015em; font-variant-numeric: tabular-nums; }
+.k-stat-value { font: 900 36px/40px var(--font-display); letter-spacing: -0.015em; font-variant-numeric: tabular-nums; }
 .k-stat-label { font-size: 14px; line-height: 20px; color: var(--ink-2); }
 
 /* ---------- List ---------- */
@@ -156,7 +156,7 @@ a.k-list-item:hover, button.k-list-item:hover { background: var(--surface-sunken
 /* ---------- Dialog ---------- */
 .k-dialog { width: min(440px, calc(100% - 32px)); border: var(--border-hairline) solid var(--line); border-radius: var(--radius-xl); padding: var(--space-6); background: var(--surface-raised); color: var(--ink); box-shadow: var(--shadow-3); }
 .k-dialog::backdrop { background: var(--scrim); }
-.k-dialog-title { font: 650 22px/28px var(--font-display); margin: 0 0 var(--space-2); }
+.k-dialog-title { font: 700 22px/28px var(--font-display); margin: 0 0 var(--space-2); }
 .k-dialog-body { color: var(--ink-2); margin: 0 0 var(--space-6); }
 .k-dialog-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: var(--space-3); }
 
