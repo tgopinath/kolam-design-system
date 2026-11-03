@@ -26,3 +26,13 @@ Shared, WCAG 2.2 AA design system for all pet projects.
 
 ## Per-project accent
 Override only `--primary`, `--primary-hover`, `--on-primary`, `--primary-soft` and `--primary-text`, in both light and dark. Re-check contrast after any change.
+
+## AI interfaces
+When an app needs chat, an assistant or an agent, take element ideas from these libraries, then rebuild them with Kolam tokens (see the AI section on the website for the shadcn-to-Kolam variable mapping and the AI patterns checklist):
+- AI Elements (Vercel): https://elements.ai-sdk.dev
+- assistant-ui: https://www.assistant-ui.com
+- prompt-kit: https://www.prompt-kit.com
+- CopilotKit: https://www.copilotkit.ai
+- 21st.dev AI chat components: https://21st.dev/community/components/explore/ai-chat-components
+
+Kolam's own `k-chat` ChatThread component (in `kolam.css`) covers the common pieces: message log, sources, thinking state, suggestions and composer.

@@ -164,3 +164,34 @@ a.k-list-item:hover, button.k-list-item:hover { background: var(--surface-sunken
 .k-avatar { display: inline-grid; place-items: center; width: 40px; height: 40px; border-radius: var(--radius-pill); background: var(--primary-soft); color: var(--primary-text); font: 700 15px/1 var(--font-display); overflow: hidden; flex: none; }
 .k-avatar-accent { background: var(--accent); color: var(--on-accent); }
 .k-avatar-lg { width: 56px; height: 56px; font-size: 20px; }
+
+/* ---------- ChatThread (AI chat) ---------- */
+.k-chat { display: grid; grid-template-rows: 1fr auto; background: var(--surface); border: var(--border-hairline) solid var(--line); border-radius: var(--radius-lg); overflow: hidden; }
+.k-chat-log { display: grid; gap: var(--space-4); align-content: start; padding: var(--space-4); overflow-y: auto; }
+.k-msg { display: grid; gap: var(--space-1); max-width: 85%; min-width: 0; }
+.k-msg-who { font: 700 12px/16px var(--font-sans); color: var(--ink-2); }
+.k-msg-body { padding: var(--space-2) var(--space-4); border-radius: var(--radius-lg); color: var(--ink); font-size: 16px; line-height: 24px; overflow-wrap: anywhere; }
+.k-msg-body p { margin: 0; } .k-msg-body p + p { margin-top: var(--space-2); }
+.k-msg-user { justify-self: end; } .k-msg-user .k-msg-who { justify-self: end; }
+.k-msg-user .k-msg-body { background: var(--primary-soft); border-bottom-right-radius: var(--radius-xs); }
+.k-msg-ai .k-msg-body { background: var(--surface-sunken); border-bottom-left-radius: var(--radius-xs); }
+.k-msg-body pre { margin: var(--space-2) 0 0; padding: var(--space-2) var(--space-4); background: var(--surface); border: var(--border-hairline) solid var(--line); border-radius: var(--radius-sm); font: 400 14px/20px var(--font-mono); overflow-x: auto; }
+.k-msg-sources { display: flex; flex-wrap: wrap; gap: var(--space-1); }
+.k-msg-actions { display: flex; gap: var(--space-1); }
+.k-thinking { display: inline-flex; align-items: center; gap: var(--space-2); color: var(--ink-2); font-size: 14px; line-height: 20px; }
+.k-thinking i { width: 8px; height: 8px; border-radius: 50%; background: var(--ink-muted); }
+@media (prefers-reduced-motion: no-preference) {
+  .k-thinking i { animation: k-pulse 1.2s infinite ease-in-out; }
+  .k-thinking i:nth-child(2) { animation-delay: .2s; } .k-thinking i:nth-child(3) { animation-delay: .4s; }
+}
+@keyframes k-pulse { 0%, 80%, 100% { opacity: .35; } 40% { opacity: 1; } }
+.k-suggestions { display: flex; flex-wrap: wrap; gap: var(--space-2); padding: 0 var(--space-4) var(--space-2); }
+.k-composer { display: flex; align-items: flex-end; gap: var(--space-2); margin: 0; padding: var(--space-2) var(--space-2) var(--space-2) var(--space-4); border-top: var(--border-hairline) solid var(--line); background: var(--surface); }
+.k-composer:focus-within { outline: var(--border-focus) solid var(--focus); outline-offset: -2px; }
+.k-composer textarea { flex: 1; min-width: 0; min-height: var(--size-control-md); max-height: 160px; padding: var(--space-2) 0; border: 0; background: transparent; color: var(--ink); font: 400 16px/24px var(--font-sans); resize: none; }
+.k-composer textarea::placeholder { color: var(--ink-muted); opacity: 1; }
+.k-composer textarea:focus-visible { outline: none; }
+.k-iconbtn-send { background: var(--primary); color: var(--on-primary); }
+.k-iconbtn-send:hover { background: var(--primary-hover); color: var(--on-primary); }
+.k-iconbtn-send[disabled] { background: var(--surface-sunken); color: var(--ink-muted); cursor: not-allowed; }
+.k-ai-note { margin: 0; padding: 0 var(--space-4) var(--space-2); background: var(--surface); color: var(--ink-muted); font-size: 12px; line-height: 16px; }

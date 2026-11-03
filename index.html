@@ -111,7 +111,7 @@ footer { max-width: 1180px; margin: 0 auto; padding: 32px 16px 48px; color: var(
 <header class="top"><div class="top-in">
   <a class="brand" href="#top"><span class="brand-dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>Kolam</a>
   <nav aria-label="Sections"><ul class="topnav">
-    <li><a href="#colors">Color</a></li><li><a href="#type">Type</a></li><li><a href="#space">Space</a></li><li><a href="#components">Components</a></li><li><a href="#behavior">Psychology</a></li><li><a href="#a11y">Accessibility</a></li><li><a href="#use">Use it</a></li>
+    <li><a href="#colors">Color</a></li><li><a href="#type">Type</a></li><li><a href="#space">Space</a></li><li><a href="#components">Components</a></li><li><a href="#behavior">Psychology</a></li><li><a href="#ai">AI</a></li><li><a href="#a11y">Accessibility</a></li><li><a href="#use">Use it</a></li>
   </ul></nav>
   <div class="k-tabs" role="tablist" aria-label="Theme">
     <button class="k-tab" role="tab" data-theme-set="light" aria-selected="true">Light</button>
@@ -241,7 +241,7 @@ footer { max-width: 1180px; margin: 0 auto; padding: 32px 16px 48px; color: var(
 
 <section id="components"><h2>Components</h2>
   <p class="lede">Plain HTML with <code>k-</code> classes from <code>kolam.css</code>. Copy the markup from any preview.</p>
-  <div class="comp-layout"><ul class="comp-nav"><li><a href="#c-button">Button</a></li><li><a href="#c-iconbutton">IconButton</a></li><li><a href="#c-textfield">TextField</a></li><li><a href="#c-select">Select</a></li><li><a href="#c-checkbox">Checkbox</a></li><li><a href="#c-radio">Radio</a></li><li><a href="#c-switch">Switch</a></li><li><a href="#c-badge">Badge</a></li><li><a href="#c-alert">Alert</a></li><li><a href="#c-card">Card</a></li><li><a href="#c-list">List</a></li><li><a href="#c-tabs">Tabs</a></li><li><a href="#c-bottomnav">BottomNav</a></li><li><a href="#c-progress">Progress</a></li><li><a href="#c-toast">Toast</a></li><li><a href="#c-dialog">Dialog</a></li><li><a href="#c-avatar">Avatar</a></li></ul><div><article class="comp" id="c-button"><h3>Button</h3><div class="comp-preview"><div class="pv">
+  <div class="comp-layout"><ul class="comp-nav"><li><a href="#c-button">Button</a></li><li><a href="#c-iconbutton">IconButton</a></li><li><a href="#c-textfield">TextField</a></li><li><a href="#c-select">Select</a></li><li><a href="#c-checkbox">Checkbox</a></li><li><a href="#c-radio">Radio</a></li><li><a href="#c-switch">Switch</a></li><li><a href="#c-badge">Badge</a></li><li><a href="#c-alert">Alert</a></li><li><a href="#c-card">Card</a></li><li><a href="#c-list">List</a></li><li><a href="#c-tabs">Tabs</a></li><li><a href="#c-bottomnav">BottomNav</a></li><li><a href="#c-progress">Progress</a></li><li><a href="#c-toast">Toast</a></li><li><a href="#c-dialog">Dialog</a></li><li><a href="#c-avatar">Avatar</a></li><li><a href="#c-chatthread">ChatThread</a></li></ul><div><article class="comp" id="c-button"><h3>Button</h3><div class="comp-preview"><div class="pv">
   <button class="k-btn k-btn-primary" type="button">Set alarm</button>
   <button class="k-btn k-btn-secondary" type="button"><svg class="k-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Add stop</button>
   <button class="k-btn k-btn-accent" type="button">Join the challenge</button>
@@ -469,6 +469,33 @@ footer { max-width: 1180px; margin: 0 auto; padding: 32px 16px 48px; color: var(
 <ul>
 <li>If the name is printed right next to the avatar, use <code>aria-hidden="true"</code> instead so it isn't read twice.</li>
 <li><strong>Psychology:</strong> a face or initial makes shared content feel personal (singularity effect). Use real people only; never invent avatars for fake social proof.</li>
+</ul></div></article><article class="comp" id="c-chatthread"><h3>ChatThread</h3><div class="comp-preview"><div class="pv-col" style="max-width:560px">
+<section class="k-chat" aria-label="Ask FarmerFriend">
+  <div class="k-chat-log" role="log" aria-label="Conversation">
+    <div class="k-msg k-msg-user"><span class="k-msg-who">You</span><div class="k-msg-body"><p>What should I check before sowing groundnut this week?</p></div></div>
+    <div class="k-msg k-msg-ai"><span class="k-msg-who">FarmerFriend</span>
+      <div class="k-msg-body"><p>Check three things: the soil is moist but not waterlogged, no heavy rain is forecast for the next two days, and your seed is treated.</p><p>This week's forecast shows dry days from Thursday, so Thursday or Friday is a good window.</p></div>
+      <div class="k-msg-sources"><span class="k-badge k-badge-secondary">Source: crop guide</span><span class="k-badge k-badge-secondary">Source: 7-day forecast</span></div>
+      <div class="k-msg-actions"><button class="k-iconbtn" type="button" aria-label="Copy answer"><svg class="k-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button><button class="k-iconbtn" type="button" aria-label="Ask again"><svg class="k-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg></button></div>
+    </div>
+    <div class="k-msg k-msg-ai"><span class="k-msg-who">FarmerFriend</span><div class="k-msg-body"><span class="k-thinking" role="status"><i></i><i></i><i></i>Checking this week's rain…</span></div></div>
+  </div>
+  <div>
+    <div class="k-suggestions" aria-label="Suggested questions"><button class="k-btn k-btn-secondary k-btn-sm" type="button">Seed rate per acre</button><button class="k-btn k-btn-secondary k-btn-sm" type="button">Pests to watch</button></div>
+    <form class="k-composer" onsubmit="event.preventDefault()"><label class="k-sr-only" for="k-chat-ask">Ask a farming question</label><textarea id="k-chat-ask" rows="1" placeholder="Ask about your crop…"></textarea><button class="k-iconbtn k-iconbtn-send" type="submit" aria-label="Send"><svg class="k-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 14-7-4 14-3-6-7-1Z"/></svg></button></form>
+    <p class="k-ai-note">Answers can be wrong. Check doses with your local agriculture officer.</p>
+  </div>
+</section>
+</div></div><div class="comp-doc"><p>A conversation with an AI assistant: a scrolling message log, suggested questions and a composer, styled with Kolam tokens. The structure follows patterns shared by AI Elements, assistant-ui and prompt-kit.</p>
+<p><strong>Markup:</strong> <code>section.k-chat[aria-label]</code> &gt; <code>div.k-chat-log[role=log]</code> holding <code>div.k-msg.k-msg-user</code> / <code>div.k-msg.k-msg-ai</code> (each <code>span.k-msg-who</code> + <code>div.k-msg-body</code>, optional <code>.k-msg-sources</code> badges and <code>.k-msg-actions</code> icon buttons), then <code>.k-suggestions</code> (<code>k-btn-secondary k-btn-sm</code>), <code>form.k-composer</code> (visually hidden <code>&lt;label&gt;</code> + <code>&lt;textarea&gt;</code> + <code>k-iconbtn k-iconbtn-send</code>) and <code>p.k-ai-note</code>. Show <code>span.k-thinking[role=status]</code> in an assistant message while waiting.</p>
+<ul>
+<li><strong>Who said what:</strong> every message carries a visible name ("You", the assistant's name), plus alignment and tint. Colour alone never tells them apart.</li>
+<li><strong>Streaming and screen readers:</strong> the log is <code>role="log"</code>. Don't announce every token: add the finished answer to the log once, and keep progress text ("Checking this week's rain…") in the <code>role="status"</code> element.</li>
+<li><strong>Stop and retry:</strong> while an answer streams, the send button becomes "Stop generating" (<code>aria-label</code> changes too). Failed answers show the error and an "Ask again" action, never a silent spinner.</li>
+<li><strong>Composer:</strong> Enter sends and Shift+Enter adds a line. Keep the send button 48px, and disable it only while the box is empty.</li>
+<li><strong>Trust:</strong> show where an answer came from (<code>.k-msg-sources</code>), keep the <code>k-ai-note</code> disclaimer visible, and label AI-written content as AI. For actions the assistant takes in the app, ask first with a Dialog (human in the loop).</li>
+<li><strong>Psychology:</strong> suggestions cut the blank-page problem (cognitive load) — offer two or three real next steps, not marketing. Never fake typing delays or "thinking" to look smarter (ethics rule).</li>
+<li><strong>Element ideas:</strong> for more patterns (reasoning panels, tool calls, attachments, branches, voice), see the AI interfaces section.</li>
 </ul></div></article></div></div>
 </section>
 
@@ -539,6 +566,41 @@ footer { max-width: 1180px; margin: 0 auto; padding: 32px 16px 48px; color: var(
 <li>Reversible actions have undo; permanent ones say what's lost (loss aversion).</li>
 <li>No invented urgency, scarcity or social proof (the ethics rule).</li>
 <li>The last moment of the flow is a clear, positive end (peak-end rule).</li>
+</ul></div></section>
+
+<section id="ai"><h2>AI interfaces</h2><div class="prose"><p>Kolam builds AI features from proven patterns. <strong>Whenever you build an app with chat, an assistant or an agent, look at these five libraries first for element ideas,</strong> then rebuild what you pick with Kolam tokens and components. Take the structure and behaviour, not the look.</p>
+<div class='tbl'><table><thead><tr><th>Library</th><th>What it gives you</th><th>Stack</th><th>Reach for it when</th></tr></thead><tbody><tr><td><strong>AI Elements</strong> (Vercel) — <a href="https://elements.ai-sdk.dev">elements.ai-sdk.dev</a></td><td>50+ components for AI-native apps: chatbot (Conversation, Message, Suggestion, prompt input), code (Agent, Artifact, Terminal), voice (mic selector, transcription), workflow (canvas, nodes) and full example pages.</td><td>React + shadcn/ui + Tailwind, copied into your project; deep Vercel AI SDK integration.</td><td>The app uses the AI SDK, or you want whole chatbot, IDE or workflow screens to learn from.</td></tr><tr><td><strong>assistant-ui</strong> — <a href="https://www.assistant-ui.com">assistant-ui.com</a></td><td>Chat primitives: Thread, Composer, Message, BranchPicker, ActionBar, Attachment, Suggestion, ThreadList, plus tool rendering, generative UI and voice.</td><td>React (also Vue, React Native, Ink) via npm; adapters for AI SDK, LangChain, LangGraph, Mastra and custom APIs.</td><td>You need production chat behaviour: editing, branching, attachments, thread history.</td></tr><tr><td><strong>prompt-kit</strong> — <a href="https://www.prompt-kit.com">prompt-kit.com</a></td><td>Small building blocks: PromptInput, ChatContainer, Message, Markdown, CodeBlock, PromptSuggestion.</td><td>React, shadcn-style components you own.</td><td>You want a light chat UI from a few pieces.</td></tr><tr><td><strong>CopilotKit</strong> — <a href="https://www.copilotkit.ai">copilotkit.ai</a></td><td>In-app agents, not just chat: chat surfaces plus shared state, frontend tools, human-in-the-loop approvals and generative UI, over the open AG-UI protocol.</td><td>React, Vue, Angular and mobile; works with many agent frameworks.</td><td>The AI should act inside the app (fill forms, change data), with the person approving.</td></tr><tr><td><strong>21st.dev</strong> — <a href="https://21st.dev/community/components/explore/ai-chat-components">AI chat components</a></td><td>A community gallery of about 60 chat components: chat inputs, bubbles, agent chat, audio chat.</td><td>React + Tailwind, often with lucide-react and Motion.</td><td>You're looking for visual variations of one element, like a chat input.</td></tr></tbody></table></div>
+<h3>How to use them with Kolam</h3>
+<ul>
+<li><strong>Plain HTML/CSS apps</strong> (most of Gopinath's apps): rebuild the pattern with <code>k-</code> classes. Start from ChatThread, and add only the pieces the app needs.</li>
+<li><strong>React apps</strong> that install one of these: theme it through Kolam tokens. These libraries use shadcn's variable names, so map them inside a wrapper class rather than globally:</li>
+</ul>
+<pre><code>.k-ai {
+  --background: var(--surface); --foreground: var(--ink);
+  --card: var(--surface); --card-foreground: var(--ink);
+  --popover: var(--surface-raised); --popover-foreground: var(--ink);
+  --primary-foreground: var(--on-primary);
+  --secondary: var(--secondary-soft); --secondary-foreground: var(--secondary-text);
+  --muted: var(--surface-sunken); --muted-foreground: var(--ink-2);
+  --accent: var(--surface-sunken); --accent-foreground: var(--ink);
+  --destructive: var(--danger); --border: var(--line); --input: var(--line-strong);
+  --ring: var(--focus); --radius: var(--radius-md);
+  font-family: var(--font-sans);
+}</code></pre>
+<ul>
+<li><strong>Watch the <code>--accent</code> clash:</strong> in shadcn, <code>accent</code> is the quiet hover background; in Kolam it's Magenta Rose. The wrapper above turns it back into a quiet grey inside <code>.k-ai</code> only. <code>--primary</code> already means the same thing in both, so leave it alone.</li>
+<li><strong>Then check it like any Kolam screen:</strong> Lato only, 8-point spacing, 48px controls, focus rings, AA contrast in light, dark and contrast themes.</li>
+</ul>
+<h3>AI patterns checklist</h3>
+<ul>
+<li><strong>Messages:</strong> sender name + alignment + tint, never colour alone. Markdown and code blocks (<code>mono</code> on <code>surface</code>) inside answers.</li>
+<li><strong>Waiting and streaming:</strong> a "thinking" status in words, a Stop action while streaming, and the finished answer announced once (<code>role="log"</code>), not token by token.</li>
+<li><strong>Errors:</strong> say what failed and offer "Ask again". Keep what the person typed.</li>
+<li><strong>Sources and reasoning:</strong> show sources as badges or links. Reasoning and tool calls collapse by default and expand on request.</li>
+<li><strong>Suggestions:</strong> two or three real next questions as <code>k-btn-secondary k-btn-sm</code> chips. They fill the composer or send directly; make it clear which.</li>
+<li><strong>Actions the AI takes:</strong> preview what will change and ask with a Dialog before anything is saved, sent or deleted (human in the loop). Offer Undo after.</li>
+<li><strong>Honesty:</strong> label AI-written content, keep the "answers can be wrong" note visible, never fake typing or confidence, and never use chat to push upgrades (ethics rule).</li>
+<li><strong>Accessibility:</strong> a labelled composer, Enter to send and Shift+Enter for a new line, 48px send and stop buttons, motion only under <code>prefers-reduced-motion: no-preference</code>.</li>
 </ul></div></section>
 
 <section id="a11y"><h2>Accessibility checklist</h2><div class="prose"><ul>
