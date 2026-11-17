@@ -36,3 +36,6 @@ When an app needs chat, an assistant or an agent, take element ideas from these 
 - 21st.dev AI chat components: https://21st.dev/community/components/explore/ai-chat-components
 
 Kolam's own `k-chat` ChatThread component (in `kolam.css`) covers the common pieces: message log, sources, thinking state, suggestions and composer.
+
+## Android app mode (Material Design 3)
+Inside the Android app (Capacitor shell, Android WebView or the installed PWA on Android) an app can switch to Material Design 3 while the website keeps the Kolam look. Load `m3/kolam-m3.js` and `m3/kolam-m3.css`, then call `KolamM3.init({ primary, destinations })`. See [`m3/README.md`](m3/README.md) and the demo at https://tgopinath.github.io/kolam-design-system/m3/?app=android

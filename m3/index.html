@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en" data-m3-primary="#0077b6">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kolam M3</title>
+<link rel="icon" href="data:,">
+<meta name="description" content="Material Design 3 Android app mode for Kolam web apps: every component in light and dark.">
+<script src="kolam-m3.js"></script>
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../kolam.css">
+<link rel="stylesheet" href="kolam-m3.css">
+<style>
+  /* Demo page layout only */
+  main { max-width: 720px; margin: 0 auto; padding: 8px 16px 48px; }
+  .screen[hidden] { display: none; }
+  .sec { margin: 0 0 32px; }
+  .sec > h2 { margin: 24px 0 12px; font: var(--md-sys-typescale-title-small); letter-spacing: var(--md-sys-typescale-title-small-tracking); color: var(--md-sys-color-primary); }
+  .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .stack { display: grid; gap: 16px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .ctl { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 56px; }
+  .ctl label { flex: 1; }
+  .muted { color: var(--md-sys-color-on-surface-variant); font: var(--md-sys-typescale-body-medium); margin: 0; }
+  .swatches { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .sw { border-radius: 12px; padding: 12px; min-height: 72px; display: grid; align-content: space-between; font: var(--md-sys-typescale-label-medium); }
+  .sw b { font: var(--md-sys-typescale-label-large); }
+  .tones { display: grid; grid-template-columns: repeat(13, 1fr); border-radius: 8px; overflow: hidden; height: 28px; margin-bottom: 4px; }
+  .tones span { display: block; }
+  .ratios { width: 100%; border-collapse: collapse; font: var(--md-sys-typescale-body-medium); }
+  .ratios td, .ratios th { padding: 8px 4px; text-align: left; border-bottom: 1px solid var(--md-sys-color-outline-variant); }
+  .ratios td:last-child, .ratios th:last-child { text-align: right; font-family: var(--font-mono); }
+  .pass { color: var(--md-sys-color-primary); } .fail { color: var(--md-sys-color-error); font-weight: 700; }
+  .brands { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  .brand { width: 40px; height: 40px; border-radius: 50%; border: 0; cursor: pointer; box-shadow: inset 0 0 0 2px rgb(255 255 255 / .6); }
+  .brand[aria-pressed="true"] { outline: 3px solid var(--md-sys-color-on-surface); outline-offset: 2px; }
+  .type-row { padding: 8px 0; border-bottom: 1px solid var(--md-sys-color-outline-variant); }
+  .type-row small { display: block; font: var(--md-sys-typescale-label-small); color: var(--md-sys-color-on-surface-variant); font-family: var(--font-mono); }
+  .web-note { max-width: 560px; margin: 48px auto; padding: 0 16px; }
+  .k-icon-demo { width: 24px; height: 24px; }
+</style>
+</head>
+<body>
+<!-- Shown in a normal browser: the kit only switches on inside the Android app -->
+<div class="web-note k-web-only">
+  <h1 class="heading-1">Kolam M3: Android app mode</h1>
+  <p class="body">This page shows the Material Design 3 skin that Kolam apps use inside their Android app. In a normal browser the apps keep their Kolam look, so the demo is off here.</p>
+  <p><a class="k-btn k-btn-primary" href="?app=android#/components">Open the Android view</a></p>
+  <p class="body-sm">Adding <code>?app=android</code> to any adopting app forces this mode for the tab; <code>?app=web</code> turns it off again.</p>
+</div>
+
+<main class="k-android-only" id="main">
+  <!-- ================= Components ================= -->
+  <section class="screen" data-screen="components">
+    <div class="sec">
+      <h2>Buttons</h2>
+      <div class="row">
+        <button class="md-button">Filled</button>
+        <button class="md-button md-button--tonal">Tonal</button>
+        <button class="md-button md-button--outlined">Outlined</button>
+      </div>
+      <div class="row" style="margin-top:8px">
+        <button class="md-button md-button--elevated"><span class="md-icon">add</span>Elevated</button>
+        <button class="md-button md-button--text">Text</button>
+        <button class="md-button" disabled>Disabled</button>
+      </div>
+    </div>
+    <div class="sec">
+      <h2>Icon buttons and FABs</h2>
+      <div class="row">
+        <button class="md-icon-button" aria-label="Favourite"><span class="md-icon">favorite</span></button>
+        <button class="md-icon-button md-icon-button--filled" aria-label="Share"><span class="md-icon">share</span></button>
+        <button class="md-icon-button md-icon-button--tonal" aria-label="Edit"><span class="md-icon">edit</span></button>
+        <button class="md-icon-button md-icon-button--outlined" aria-label="Bookmark" aria-pressed="false" id="bm"><span class="md-icon">bookmark</span></button>
+      </div>
+      <div class="row" style="margin-top:12px; gap:16px">
+        <button class="md-fab md-fab--small md-fab--surface" aria-label="Edit"><span class="md-icon">edit</span></button>
+        <button class="md-fab" aria-label="Add"><span class="md-icon">add</span></button>
+        <button class="md-fab md-fab--extended md-fab--tertiary"><span class="md-icon">navigation</span>Navigate</button>
+      </div>
+    </div>
+    <div class="sec">
+      <h2>Chips</h2>
+      <div class="md-chip-set md-chip-set--scroll" role="group" aria-label="Filter crops">
+        <button class="md-chip md-chip--filter" aria-pressed="true">Paddy</button>
+        <button class="md-chip md-chip--filter" aria-pressed="false">Millets</button>
+        <button class="md-chip md-chip--filter" aria-pressed="false">Pulses</button>
+        <button class="md-chip md-chip--filter" aria-pressed="false">Vegetables</button>
+      </div>
+      <div class="md-chip-set" style="margin-top:8px">
+        <button class="md-chip md-chip--assist"><span class="md-icon">event</span>Add to calendar</button>
+        <span class="md-chip md-chip--input">Chennai<button class="md-chip__remove" aria-label="Remove Chennai"><span class="md-icon">close</span></button></span>
+        <button class="md-chip md-chip--elevated">Suggestion</button>
+      </div>
+    </div>
+    <div class="sec">
+      <h2>Cards</h2>
+      <div class="stack">
+        <a class="md-card" href="#/components">
+          <h3 class="md-card__title">Elevated card</h3>
+          <p class="md-card__subtitle">Surface container low, elevation 1. Tap for a ripple.</p>
+        </a>
+        <div class="two">
+          <div class="md-card md-card--filled"><h3 class="md-card__title">Filled</h3><p class="md-card__subtitle">Container highest</p></div>
+          <div class="md-card md-card--outlined"><h3 class="md-card__title">Outlined</h3><p class="md-card__subtitle">Outline variant</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="sec">
+      <h2>Text fields and search</h2>
+      <div class="stack">
+        <div class="md-search-bar"><span class="md-icon">search</span><input type="search" placeholder="Search plants" aria-label="Search plants"><button class="md-icon-button" aria-label="Voice search"><span class="md-icon">mic</span></button></div>
+        <label class="md-text-field md-text-field--outlined"><input placeholder=" " autocomplete="name"><span class="md-text-field__label">Your name</span></label>
+        <label class="md-text-field md-text-field--filled"><input placeholder=" " inputmode="numeric" value="2.5"><span class="md-text-field__label">Field size (acres)</span></label>
+        <div><label class="md-text-field md-text-field--outlined"><input placeholder=" " aria-invalid="true" value="98400" aria-describedby="pin-err"><span class="md-text-field__label">PIN code</span></label>
+        <span class="md-text-field__support" id="pin-err">A PIN code has 6 digits</span></div>
+      </div>
+    </div>
+    <div class="sec">
+      <h2>Lists</h2>
+      <h3 class="md-list-subheader">Today</h3>
+      <ul class="md-list">
+        <li><a class="md-list-item" href="#/components"><span class="md-list-item__avatar">அ</span><span class="md-list-item__text"><span class="md-list-item__headline">Water the seedlings</span><span class="md-list-item__supporting">Before 9 am, 20 minutes</span></span><span class="md-list-item__trailing">7:30</span></a></li>
+        <li><hr class="md-divider md-divider--inset"></li>
+        <li><a class="md-list-item" href="#/components"><span class="md-icon">wb_sunny</span><span class="md-list-item__text"><span class="md-list-item__headline">Hot afternoon expected</span><span class="md-list-item__supporting">36 °C, Open-Meteo</span></span><span class="md-icon">chevron_right</span></a></li>
+      </ul>
+    </div>
+    <div class="sec">
+      <h2>Selection controls</h2>
+      <div class="ctl"><label for="sw1" class="md-body-large">Notifications</label><input id="sw1" type="checkbox" role="switch" class="md-switch" checked></div>
+      <div class="ctl"><label for="sw2" class="md-body-large">Use mobile data</label><input id="sw2" type="checkbox" role="switch" class="md-switch"></div>
+      <div class="row" style="gap:0 16px"><span class="row" style="gap:0"><input id="c1" type="checkbox" class="md-checkbox" checked><label for="c1">Seeds</label></span><span class="row" style="gap:0"><input id="c2" type="checkbox" class="md-checkbox"><label for="c2">Fertiliser</label></span></div>
+      <div class="row" style="gap:0 16px" role="radiogroup" aria-label="Language"><span class="row" style="gap:0"><input id="r1" type="radio" name="r" class="md-radio" checked><label for="r1" lang="ta">தமிழ்</label></span><span class="row" style="gap:0"><input id="r2" type="radio" name="r" class="md-radio"><label for="r2">English</label></span></div>
+    </div>
+    <div class="sec">
+      <h2>Tabs and segmented buttons</h2>
+      <div class="md-tabs" role="tablist" aria-label="Weather">
+        <button class="md-tab" role="tab" aria-selected="true">Today</button><button class="md-tab" role="tab" aria-selected="false">This week</button><button class="md-tab" role="tab" aria-selected="false">Season</button>
+      </div>
+      <div class="md-segmented" role="group" aria-label="Units" style="margin-top:16px">
+        <button aria-pressed="true">°C</button><button aria-pressed="false">°F</button><button aria-pressed="false">K</button>
+      </div>
+    </div>
+    <div class="sec">
+      <h2>Progress and badges</h2>
+      <div class="stack">
+        <div class="md-linear-progress" role="progressbar" aria-label="Download" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100" style="--md-progress:.62"></div>
+        <div class="md-linear-progress md-linear-progress--indeterminate" role="progressbar" aria-label="Loading"></div>
+        <div class="row" style="gap:24px"><div class="md-circular-progress" role="progressbar" aria-label="Sync" aria-valuenow="70" style="--md-progress:.7"></div><div class="md-circular-progress md-circular-progress--indeterminate" role="progressbar" aria-label="Loading"></div>
+          <span class="md-badge" aria-label="New"></span><span class="md-badge md-badge--large">3</span><span class="md-badge md-badge--large">99+</span></div>
+      </div>
+    </div>
+    <div class="sec">
+      <h2>Dialog and snackbar</h2>
+      <div class="row">
+        <button class="md-button md-button--tonal" id="openDlg">Open dialog</button>
+        <button class="md-button md-button--outlined" id="snack">Show snackbar</button>
+      </div>
+    </div>
+    <button class="md-fab md-fab--fixed" aria-label="New entry" id="fab"><span class="md-icon">add</span></button>
+  </section>
+
+  <!-- ================= Colour ================= -->
+  <section class="screen" data-screen="colour" hidden>
+    <div class="sec">
+      <h2>Source colour (the app's Kolam primary)</h2>
+      <div class="brands" id="brands"></div>
+      <p class="muted" style="margin-top:12px">The whole scheme is generated from one colour: tonal palettes with CIELAB L* as tone (an HCT approximation), then M3 baseline tones for light, dark and high contrast.</p>
+    </div>
+    <div class="sec"><h2>Roles</h2><div class="swatches" id="swatches"></div></div>
+    <div class="sec"><h2>Tonal palettes (0 → 100)</h2><div id="tones"></div></div>
+    <div class="sec"><h2>Contrast checks (current scheme)</h2><table class="ratios" id="ratios"></table></div>
+  </section>
+
+  <!-- ================= Type ================= -->
+  <section class="screen" data-screen="type" hidden>
+    <div class="sec"><h2>Type scale in Lato and Noto Sans Tamil</h2><div id="typeScale"></div></div>
+  </section>
+
+  <!-- ================= Kolam skin ================= -->
+  <section class="screen" data-screen="kolam" hidden>
+    <p class="muted">Unchanged Kolam markup (<code>k-</code> classes). Inside the Android app the skin layer restyles it to M3.</p>
+    <div class="sec">
+      <h2>k-btn</h2>
+      <div class="row"><button class="k-btn k-btn-primary">Primary</button><button class="k-btn k-btn-secondary">Secondary</button><button class="k-btn k-btn-outline">Outline</button><button class="k-btn k-btn-ghost">Ghost</button></div>
+      <div class="row" style="margin-top:8px"><button class="k-btn k-btn-accent">Accent</button><button class="k-btn k-btn-danger">Danger</button><button class="k-btn k-btn-primary" disabled>Disabled</button>
+        <button class="k-iconbtn" aria-label="Settings"><svg class="k-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></button>
+        <button class="k-iconbtn k-iconbtn-filled" aria-label="Add"><svg class="k-icon" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button></div>
+    </div>
+    <div class="sec">
+      <h2>k-tabs, k-badge, k-count</h2>
+      <div class="k-tabs" role="tablist"><button class="k-tab" role="tab" aria-selected="true">Day</button><button class="k-tab" role="tab" aria-selected="false">Week</button><button class="k-tab" role="tab" aria-selected="false">Month</button></div>
+      <div class="row" style="margin-top:12px"><span class="k-badge">Draft</span><span class="k-badge k-badge-primary">New</span><span class="k-badge k-badge-success">Ready</span><span class="k-badge k-badge-danger">Late</span><span class="k-count">4</span></div>
+    </div>
+    <div class="sec">
+      <h2>k-field, k-check, k-switch</h2>
+      <div class="stack">
+        <div class="k-field"><label class="k-label" for="kin">Village</label><input class="k-input" id="kin" value="Melur"><span class="k-help">Used for the weather forecast</span></div>
+        <div class="k-field"><label class="k-label" for="ksel">Crop</label><select class="k-select" id="ksel"><option>Paddy</option><option>Ragi</option></select></div>
+        <label class="k-check"><input type="checkbox" checked><span class="k-check-box"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></span><span class="k-check-text">Remind me<small>One notification a day</small></span></label>
+        <label class="k-check"><input type="radio" name="kr" checked><span class="k-check-box"></span><span class="k-check-text">தமிழ்</span></label>
+        <label class="k-switch"><span>Offline maps</span><input type="checkbox" role="switch" checked><span class="k-switch-track"></span></label>
+      </div>
+    </div>
+    <div class="sec">
+      <h2>k-card, k-list, k-alert, k-progress</h2>
+      <div class="stack">
+        <a class="k-card" href="#/kolam"><h3 class="k-card-title">Kolam card</h3><p class="k-card-meta">Becomes an elevated M3 card</p></a>
+        <div class="k-card k-card-featured"><h3 class="k-card-title">Featured</h3><p class="k-card-meta">Tertiary container</p></div>
+        <ul class="k-list"><li><a class="k-list-item" href="#/kolam"><span class="k-list-text">Soil test<small>Due in 3 days</small></span></a></li><li><a class="k-list-item" href="#/kolam"><span class="k-list-text">Seed order</span></a></li></ul>
+        <div class="k-alert" role="status"><svg class="k-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg><div><span class="k-alert-title">Rain tomorrow</span><span class="k-alert-body">Hold off on spraying.</span></div></div>
+        <div class="k-progress"><div class="k-progress-head"><span>Season</span><span>48%</span></div><div class="k-progress-track"><div class="k-progress-fill" style="width:48%"></div></div></div>
+        <div class="k-toast" role="status"><span class="k-toast-text">Saved to your list</span><button class="k-btn k-btn-ghost">Undo</button></div>
+        <div class="row"><span class="k-avatar">GT</span><span class="k-avatar k-avatar-accent">அ</span><button class="k-btn k-btn-outline" id="openKDlg">Open k-dialog</button></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<dialog class="md-dialog" id="dlg" aria-labelledby="dlgH">
+  <span class="md-icon md-dialog__icon">delete</span>
+  <h2 class="md-dialog__headline" id="dlgH">Delete this entry?</h2>
+  <p class="md-dialog__content">The harvest note for 12 November will be removed from this phone. Android's Back button closes this dialog.</p>
+  <form method="dialog" class="md-dialog__actions"><button class="md-button md-button--text" value="cancel">Cancel</button><button class="md-button md-button--text" value="ok">Delete</button></form>
+</dialog>
+<dialog class="k-dialog" id="kdlg" aria-labelledby="kdlgH">
+  <h2 class="k-dialog-title" id="kdlgH">Kolam dialog</h2>
+  <p class="k-dialog-body">Same markup as the website; the actions become M3 text buttons.</p>
+  <form method="dialog" class="k-dialog-actions"><button class="k-btn k-btn-outline">Cancel</button><button class="k-btn k-btn-primary">Save</button></form>
+</dialog>
+
+<script>
+(() => {
+  if (!KolamM3.isAndroid) return;
+  const $ = s => document.querySelector(s);
+  const BRANDS = [['Kolam Ocean Azure', '#0077b6'], ['Vanam forest', '#1f5a43'], ['Kolam Magenta', '#d63384'], ['Turmeric', '#8c5300'], ['Indigo', '#3f51b5']];
+  let primary = BRANDS[0][1];
+  const theme = () => document.documentElement.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  const m3 = KolamM3.init({
+    primary, title: 'Kolam M3',
+    destinations: [
+      { id: 'components', label: 'Components', icon: 'widgets', href: '#/components' },
+      { id: 'colour', label: 'Colour', icon: 'palette', href: '#/colour' },
+      { id: 'type', label: 'Type', icon: 'match_case', href: '#/type' },
+      { id: 'kolam', label: 'Kolam skin', icon: 'layers', href: '#/kolam' },
+    ],
+    actions: [{ id: 'themeBtn', icon: theme() === 'dark' ? 'light_mode' : 'dark_mode', label: 'Switch light or dark', onClick: toggleTheme }],
+    icons: ['light_mode', 'dark_mode', 'delete', 'add', 'navigation'],
+  });
+  function toggleTheme() {
+    const next = theme() === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    m3.setActions([{ id: 'themeBtn', icon: next === 'dark' ? 'light_mode' : 'dark_mode', label: 'Switch light or dark', onClick: toggleTheme }]);
+    renderColour();
+  }
+  const titles = { components: 'Components', colour: 'Colour', type: 'Type scale', kolam: 'Kolam skin' };
+  function route() {
+    const id = (location.hash.match(/^#\/(\w+)/) || [])[1] || 'components';
+    if (!titles[id]) { location.replace('#/components'); return; }
+    document.querySelectorAll('.screen').forEach(s => (s.hidden = s.dataset.screen !== id));
+    m3.setTitle(titles[id]);
+    if (id === 'colour') renderColour();
+    scrollTo(0, 0);
+  }
+  addEventListener('hashchange', route);
+
+  // Interactions
+  document.addEventListener('click', e => {
+    const chip = e.target.closest('.md-chip--filter, .md-segmented > button, #bm');
+    if (chip) {
+      if (chip.closest('.md-segmented')) chip.parentElement.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', b === chip));
+      else chip.setAttribute('aria-pressed', chip.getAttribute('aria-pressed') !== 'true');
+      KolamM3.haptic('selection');
+    }
+    const tab = e.target.closest('[role="tab"]');
+    if (tab) tab.parentElement.querySelectorAll('[role="tab"]').forEach(t => t.setAttribute('aria-selected', t === tab));
+  });
+  $('#openDlg').onclick = () => $('#dlg').showModal();
+  $('#openKDlg').onclick = () => $('#kdlg').showModal();
+  $('#dlg').addEventListener('close', () => { if ($('#dlg').returnValue === 'ok') m3.snackbar('Entry deleted', { action: 'Undo', onAction: () => m3.snackbar('Entry restored') }); });
+  $('#snack').onclick = () => m3.snackbar('Saved for offline use', { action: 'View' });
+  $('#fab').onclick = () => m3.snackbar('New entry started');
+
+  // Colour screen
+  const ROLE_PAIRS = [['primary', 'on-primary'], ['primary-container', 'on-primary-container'], ['secondary', 'on-secondary'], ['secondary-container', 'on-secondary-container'],
+    ['tertiary', 'on-tertiary'], ['tertiary-container', 'on-tertiary-container'], ['error', 'on-error'], ['error-container', 'on-error-container'],
+    ['surface', 'on-surface'], ['surface-container', 'on-surface-variant'], ['surface-container-highest', 'on-surface'], ['inverse-surface', 'inverse-on-surface']];
+  function currentRoles() {
+    const s = KolamM3.scheme(primary), hi = matchMedia('(prefers-contrast: more)').matches, t = document.documentElement.getAttribute('data-theme');
+    if (t === 'contrast') return s.lightHigh;
+    return theme() === 'dark' ? (hi ? s.darkHigh : s.dark) : (hi ? s.lightHigh : s.light);
+  }
+  function renderColour() {
+    const roles = currentRoles();
+    $('#brands').innerHTML = BRANDS.map(([n, h]) => `<button class="brand" style="background:${h}" aria-label="${n}" aria-pressed="${h === primary}" data-hex="${h}"></button>`).join('') +
+      `<label class="md-chip md-chip--assist" style="cursor:pointer"><span class="md-icon">colorize</span>Pick<input type="color" value="${primary}" id="pick" style="position:absolute;opacity:0;inset:0;width:100%;cursor:pointer"></label>`;
+    $('#swatches').innerHTML = ROLE_PAIRS.map(([bg, fg]) => `<div class="sw" style="background:var(--md-sys-color-${bg});color:var(--md-sys-color-${fg})"><b>${bg}</b><span>${roles[bg]} · ${KolamM3.contrastRatio(roles[bg], roles[fg]).toFixed(1)}:1</span></div>`).join('');
+    const P = KolamM3.scheme(primary).palettes, T = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 95, 99, 100];
+    $('#tones').innerHTML = ['primary', 'secondary', 'tertiary', 'neutral', 'neutralVariant', 'error'].map(k => `<p class="muted" style="margin:8px 0 4px">${k}</p><div class="tones" aria-hidden="true">${T.map(t => `<span title="${k} ${t}" style="background:${P[k](t)}"></span>`).join('')}</div>`).join('');
+    $('#ratios').innerHTML = '<tr><th>Text / mark</th><th>On</th><th>Ratio</th></tr>' + KolamM3.checkContrast(roles).map(r => `<tr><td>${r.fg}</td><td>${r.bg}</td><td class="${r.pass ? 'pass' : 'fail'}">${r.ratio.toFixed(2)} ${r.pass ? '✓' : '✗'} ${r.min}</td></tr>`).join('');
+    document.querySelectorAll('.brand').forEach(b => (b.onclick = () => setPrimary(b.dataset.hex)));
+    $('#pick').oninput = e => setPrimary(e.target.value);
+  }
+  function setPrimary(hex) { primary = hex; KolamM3.applyColors(hex); renderColour(); }
+
+  // Type screen
+  const SCALE = ['display-large', 'display-medium', 'display-small', 'headline-large', 'headline-medium', 'headline-small', 'title-large', 'title-medium', 'title-small', 'body-large', 'body-medium', 'body-small', 'label-large', 'label-medium', 'label-small'];
+  $('#typeScale').innerHTML = SCALE.map(s => `<div class="type-row"><small>${s}</small><div class="md-${s}">${s.startsWith('display') ? 'Kolam 24°' : s.startsWith('headline') ? 'Harvest plan · அறுவடை' : 'Water the seedlings before nine · நாற்றுகளுக்கு நீர்'}</div></div>`).join('');
+  if (!location.hash) history.replaceState(null, '', '#/components');
+  route();
+})();
+</script>
+</body>
+</html>
